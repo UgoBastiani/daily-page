@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_20_131801) do
+
+ActiveRecord::Schema[7.1].define(version: 2024_08_20_133252) do
+  
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,11 +50,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_20_131801) do
     t.string "title"
     t.string "author"
     t.integer "number_of_pages"
-    t.bigint "genre_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "description"
+    t.string "thumbnail"
     t.index ["category_id"], name: "index_books_on_category_id"
-    t.index ["genre_id"], name: "index_books_on_genre_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -70,12 +72,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_20_131801) do
     t.datetime "updated_at", null: false
     t.index ["book_id"], name: "index_favorites_on_book_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
-  end
-
-  create_table "genres", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "suggestions", force: :cascade do |t|
@@ -104,7 +100,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_20_131801) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "books", "categories"
-  add_foreign_key "books", "genres"
   add_foreign_key "favorites", "books"
   add_foreign_key "favorites", "users"
   add_foreign_key "suggestions", "books"
