@@ -144,10 +144,11 @@ books_police_en.each do |book_title|
   details = fetch_book_details(book_title)
 
   if details
+    p details[:number_of_pages]
     Book.create!(
       title: details[:title],
       author: details[:author],
-      number_of_pages: details[:number_of_pages],
+      number_of_pages: details[:number_of_pages].to_i,
       publishing_date: details[:publishing_date],
       description: details[:description],
       thumbnail: details[:thumbnail],
@@ -185,7 +186,7 @@ books_thriller_en.each do |book_title|
     Book.create!(
       title: details[:title],
       author: details[:author],
-      number_of_pages: details[:number_of_pages],
+      number_of_pages: details[:number_of_pages].to_i,
       publishing_date: details[:publishing_date],
       description: details[:description],
       thumbnail: details[:thumbnail],
@@ -219,7 +220,7 @@ books_historical_en.each do |book_title|
     Book.create!(
       title: details[:title],
       author: details[:author],
-      number_of_pages: details[:number_of_pages],
+      number_of_pages: details[:number_of_pages].to_i,
       publishing_date: details[:publishing_date],
       description: details[:description],
       thumbnail: details[:thumbnail],
@@ -255,7 +256,7 @@ books_science_fiction_en.each do |book_title|
     Book.create!(
       title: details[:title],
       author: details[:author],
-      number_of_pages: details[:number_of_pages],
+      number_of_pages: details[:number_of_pages].to_i,
       publishing_date: details[:publishing_date],
       description: details[:description],
       thumbnail: details[:thumbnail],
@@ -289,7 +290,7 @@ books_fantastique_en.each do |book_title|
     Book.create!(
       title: details[:title],
       author: details[:author],
-      number_of_pages: details[:number_of_pages],
+      number_of_pages: details[:number_of_pages].to_i,
       publishing_date: details[:publishing_date],
       description: details[:description],
       thumbnail: details[:thumbnail],
@@ -324,7 +325,7 @@ books_fantasy_en.each do |book_title|
     Book.create!(
       title: details[:title],
       author: details[:author],
-      number_of_pages: details[:number_of_pages],
+      number_of_pages: details[:number_of_pages].to_i,
       publishing_date: details[:publishing_date],
       description: details[:description],
       thumbnail: details[:thumbnail],
@@ -359,7 +360,7 @@ books_romance_en.each do |book_title|
     Book.create!(
       title: details[:title],
       author: details[:author],
-      number_of_pages: details[:number_of_pages],
+      number_of_pages: details[:number_of_pages].to_i,
       publishing_date: details[:publishing_date],
       description: details[:description],
       thumbnail: details[:thumbnail],
@@ -396,7 +397,7 @@ books_horror_en.each do |book_title|
     Book.create!(
       title: details[:title],
       author: details[:author],
-      number_of_pages: details[:number_of_pages],
+      number_of_pages: details[:number_of_pages].to_i,
       publishing_date: details[:publishing_date],
       description: details[:description],
       thumbnail: details[:thumbnail],
@@ -434,7 +435,7 @@ books_adventure_en.each do |book_title|
     Book.create!(
       title: details[:title],
       author: details[:author],
-      number_of_pages: details[:number_of_pages],
+      number_of_pages: details[:number_of_pages].to_i,
       publishing_date: details[:publishing_date],
       description: details[:description],
       thumbnail: details[:thumbnail],
@@ -469,7 +470,7 @@ books_comedy_en.each do |book_title|
     Book.create!(
       title: details[:title],
       author: details[:author],
-      number_of_pages: details[:number_of_pages],
+      number_of_pages: details[:number_of_pages].to_i,
       publishing_date: details[:publishing_date],
       description: details[:description],
       thumbnail: details[:thumbnail],
@@ -506,7 +507,7 @@ books_drama_en.each do |book_title|
     Book.create!(
       title: details[:title],
       author: details[:author],
-      number_of_pages: details[:number_of_pages],
+      number_of_pages: details[:number_of_pages].to_i,
       publishing_date: details[:publishing_date],
       description: details[:description],
       thumbnail: details[:thumbnail],
@@ -541,7 +542,7 @@ books_autobiography_en.each do |book_title|
     Book.create!(
       title: details[:title],
       author: details[:author],
-      number_of_pages: details[:number_of_pages],
+      number_of_pages: details[:number_of_pages].to_i,
       publishing_date: details[:publishing_date],
       description: details[:description],
       thumbnail: details[:thumbnail],
