@@ -128,16 +128,16 @@ end
 # Policier
 
 books_police_en = [
-  "thebigsleep",
-  "thegodfather",
-  "gonegirl",
   "thegirlwiththedragontattoo",
-  "murderontheorientexpress",
-  "thethreemonkeys",
-  "thecuckooscalling",
-  "inthenickoftime",
-  "theprivateeye",
-  "thebonecollector"
+  "gonegirl",
+  "thesilenceofthelambs",
+  "biglittlelies",
+  "intheremains",
+  "thesnowman",
+  "thespywhocameinfromthecold",
+  "shutterisland",
+  "thedaVinciCode",
+  "thegodfather"
 ]
 
 books_police_en.each do |book_title|
@@ -164,17 +164,16 @@ end
 # Thriller
 
 books_thriller_en = [
-  "thegirlwiththedragontattoo",
-  "gonegirl",
-  "shutterisland",
-  "thesilentpatient",
-  "thegirlontherainbow",
-  "thegirlonthetrain",
-  "thewifebetweenus",
-  "beforeigosleep",
-  "thecabinpnthewoods",
-  "darkplaces",
-  "themaidens"
+  "thegirlwithallthegifts",
+  "thedavinciCode",
+  "thehunger",
+  "inthemisofthewar",
+  "thewomaninwhite",
+  "theroad",
+  "thecoupleNextdoor",
+  "beforeigotosleep",
+  "rebecca",
+  "theblackecho"
 ]
 
 
@@ -202,14 +201,15 @@ end
 # Historique
 
 books_historical_en = [
-  "thebookthief",
   "allthelightwecannotsee",
-  "thepianist",
-  "lifeandnothingbut",
-  "thetudorseries",
-  "thehunchbackofnotredame",
-  "aurelian",
-  "thekingdomofgod"
+  "thebookthief",
+  "warandpeace",
+  "thepillarsOfTheEarth",
+  "wolfhall",
+  "thehelp",
+  "theotherBoleynGirl",
+  "thelighthorseman",
+  "beneathascarletsky"
 ]
 
 books_historical_en.each do |book_title|
@@ -237,16 +237,14 @@ end
 books_science_fiction_en = [
   "dune",
   "neuromancer",
-  "snowcrash",
   "foundation",
+  "braveNewWorld",
+  "snowcrash",
   "hyperion",
-  "endersegame",
-  "bravenewworld",
   "thelefthandofdarkness",
-  "themoonisaseriousbusiness",
-  "doandroidsdreamofelectricsheep",
-  "thethreebodyproblem",
-  "thedispossessed"
+  "endersgame",
+  "theexhalation",
+  "doAndroidsDreamOfElectricSheep"
 ]
 
 
@@ -273,20 +271,15 @@ end
 # Fantastique
 
 books_fantastique_en = [
-  "theblackwitch",
-  "theblindingknife",
-  "thebonehunters",
-  "thedarkestminds",
-  "thedemonprince",
-  "thedragonlance",
-  "thefifthdemon",
-  "thefirethief",
+  "theturnofthewheel",
+  "thehoundsOfBaskerville",
+  "thewhisperinggallery",
+  "thehauntingofhillhouse",
+  "themonk",
+  "thefifthseason",
   "thegoldencompass",
-  "thegreenwitch",
-  "thegrimmlegends",
-  "thehiddencity",
-  "thekingdomsofshadow",
-  "thelastkingdom"
+  "swanSong",
+  "thedrownedcities"
 ]
 
 books_fantastique_en.each do |book_title|
@@ -313,23 +306,16 @@ end
 
 books_fantasy_en = [
   "thehobbit",
-  "thelordoftherings",
   "harrypotterandthesorcerersstone",
-  "thechroniclesofnarnia",
-  "thegoldenspy",
-  "thewiseones",
-  "thedragonbonechair",
-  "theeyeoftheworld",
-  "theswordofshannara",
-  "theprinceofthieves",
-  "thesilmarillion",
-  "thewheeloffire",
-  "thecityofthebeast",
-  "thedarktower",
-  "thewastelands",
-  "thelastunicorn"
+  "thelionthewitchandthewardrobe",
+  "aGameOfThrones",
+  "mistborn",
+  "thefinalempire",
+  "theNameOfTheWind",
+  "goodomens",
+  "neverwhere",
+  "thecrystalshard"
 ]
-
 
 books_fantasy_en.each do |book_title|
   details = fetch_book_details(book_title)
@@ -355,17 +341,15 @@ end
 
 books_romance_en = [
   "prideandprejudice",
-  "twilight",
-  "thekissingquotient",
-  "outlander",
+  "janeausten",
+  "thenotebook",
   "mebeforeyou",
-  "therosecode",
-  "thefaultinourstars",
-  "gonewiththewind",
-  "fiftyshadesofgrey",
-  "thebridgertonseries",
+  "outlander",
+  "thekissquotient",
   "theweddingdate",
-  "redwhiteandroyalblue"
+  "thebridgertonseries",
+  "toalltheboysive LovedBefore",
+  "beachread"
 ]
 
 books_romance_en.each do |book_title|
@@ -391,20 +375,16 @@ end
 # Horreur
 
 books_horror_en = [
-  "thestandin",
-  "it",
-  "theshining",
-  "petsematary",
-  "carrie",
   "theexorcist",
-  "theamityvillehorror",
-  "frankenstein",
-  "dracula",
-  "theturnofthescrew",
-  "thehauntingofhillhouse",
-  "thegirlnextdoor",
-  "americanpsycho",
-  "themist"
+  "it",
+  "petsematary",
+  "theshining",
+  "thesilenceofthelambs",
+  "thebabadook",
+  "houseofleaves",
+  "thecabininthewoods",
+  "us",
+  "hereditary"
 ]
 
 
@@ -432,20 +412,17 @@ end
 # Aventure
 
 books_adventure_en = [
-  "thelostworld",
-  "julesverne",
   "treasureisland",
-  "robinsoncrusoe",
-  "theadventuresoftom sawyer",
-  "thethree musketeers",
-  "kingkong",
-  "aroundtheworldineighty days",
-  "heartofdarkness",
   "journeytothecenteroftheearth",
-  "thecountofmontecristo",
+  "kingkong",
+  "thethree Musketeers",
+  "robinhood",
+  "20,000LeaguesUndertheSea",
   "moby-dick",
-  "thecallofthewild",
-  "swissfamilyrobinson"
+  "thecountofmontecristo",
+  "thelostworld",
+  "theadventuresofhuckleberryfinn",
+  "thecallofthewild"
 ]
 
 
@@ -473,18 +450,16 @@ end
 # Comedie
 
 books_comedy_en = [
-  "prideandprejudice",
-  "senseandsensibility",
-  "theimportanceofbeingearnest",
-  "thecantervilleghost",
-  "three menina boat",
-  "bridgetjonesdiary",
-  "catch22",
-  "thehitchhikersguidetothegalaxy",
-  "thegrandbudapesthotel",
   "goodomens",
-  "thecompleteworkssofwilliamshakespeare",
-  "davidcopperfield"
+  "thehitchhikersguidetothegalaxy",
+  "where'dyougobernadette",
+  "bridgetjonessdiary",
+  "meandearlandthedyinggirl",
+  "crazyrichasians",
+  "theimportanceofbeingearnest",
+  "theprincessbride",
+  "bossypants",
+  "letspretendthisneverhappened"
 ]
 
 books_comedy_en.each do |book_title|
@@ -510,18 +485,16 @@ end
 # Drame
 
 books_drama_en = [
-  "to kill a mockingbird",
-  "the great gatsby",
-  "one hundred years of solitude",
-  "catcher in the rye",
-  "lord of the flies",
-  "the road",
-  "a streetcar named desire",
-  "death of a salesman",
-  "the glass menagerie",
+  "to Kill a Mockingbird",
+  "the Great Gatsby",
+  "one Flew Over the Cuckoo's Nest",
+  "a Streetcar Named Desire",
+  "the Catcher in the Rye",
   "beloved",
-  "the kite runner",
-  "atonement"
+  "the Road",
+  "life of Pi",
+  "atonement",
+  "the Color Purple"
 ]
 
 
@@ -549,16 +522,16 @@ end
 # Autobiographie
 
 books_autobiography_en = [
-  "the diary of a young girl",
-  "long walk to freedom",
-  "the story of my experiments with truth",
+  "the Diary of a Young Girl",
   "becoming",
-  "the glass castle",
+  "the Long Walk to Freedom",
+  "the Glass Castle",
+  "the Story of My Life",
   "wild",
-  "i know why the caged bird sings",
-  "when breath becomes air",
-  "education",
-  "open"
+  "steve Jobs",
+  "when Breath Becomes Air",
+  "the Autobiography of Malcolm X",
+  "i Know Why the Caged Bird Sings"
 ]
 
 books_autobiography_en.each do |book_title|
