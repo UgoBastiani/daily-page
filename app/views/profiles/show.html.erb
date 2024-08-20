@@ -1,0 +1,22 @@
+<%= content_for :title, "Profile" %>
+
+<div class="profile-container">
+  <h1>Your Profile</h1>
+
+  <div class="profile-details">
+    <div class="profile-item">
+      <strong>First Name:</strong>
+      <%= current_user&.first_name %>
+    </div>
+    <div class="profile-item">
+      <strong>Last Name:</strong>
+      <%= current_user&.last_name %>
+    </div>
+    <div class="profile-item">
+      <strong>Email:</strong>
+      <%= current_user.email %>
+    </div>
+  </div>
+
+  <%= link_to 'Edit Profile', edit_registration_path(current_user), class: "btn btn-primary" %>
+</div>

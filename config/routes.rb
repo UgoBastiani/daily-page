@@ -9,4 +9,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  # get 'profile/:id', to: 'profile#show', as: 'profile'
+  resource :profile, only: :show
 end
