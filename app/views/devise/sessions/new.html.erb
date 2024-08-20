@@ -1,20 +1,25 @@
-<h2>Log in</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+<div class="container position-absolute top-50 start-50 translate-middle" style="width: 20rem; mt-15">
+  <div class="cardheader text-center mb-3">
+    <h2>Log in</h2>
   </div>
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-inputs">
+      <%= f.input :email,
+                  required: false,
+                  autofocus: true,
+                  input_html: { autocomplete: "email", class:"border border-primary" } %>
+      <%= f.input :password,
+                  required: false,
+                  input_html: { autocomplete: "current-password", class:"border border-primary" } %>
+      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    </div>
+    <div class="d-flex justify-content-center">
+      <div class="d-flex justify-content-center align-items-center">
+        <%= f.button :submit, "Log in", class:"form-actions btn btn-primary rounded-pill me-2" %>
+        <%= link_to "Sign up", new_registration_path(resource_name), class:"form-actions btn btn-primary rounded-pill" %><br />
+      </div>
+    </div>
+  <% end %>
+  <%= render "devise/shared/links" %>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
