@@ -11,12 +11,12 @@ $body-bg:                $light-gray;
 $font-size-base:         1rem;
 
 // Colors
-$body-color: $blue;
-$primary:    $gray;
-$success:    $green;
-$info:       $yellow;
+$body-color: black;
+$primary:    white;
+$success:    rgb(57, 55, 55);
+$info:       yellow;
 $danger:     $red;
-$warning:    $orange;
+$warning:    rgb(184, 179, 179);
 
 // Buttons & inputs' radius
 $border-radius-sm:            .0625rem;
