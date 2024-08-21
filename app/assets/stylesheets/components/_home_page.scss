@@ -1,0 +1,18 @@
+.question {
+  display: none;
+}
+
+.question.active {
+  display: block;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.d-none {
+  display: none;
+}
