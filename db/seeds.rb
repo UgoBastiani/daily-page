@@ -43,7 +43,7 @@ user4 = User.create(
 
 category1 = Category.create(
   name: "Policier",
-  mood: "Intrigue"
+  mood: "Plot"
 )
 
 category2 = Category.create(
@@ -53,12 +53,12 @@ category2 = Category.create(
 
 category3 = Category.create(
   name: "Historique",
-  mood: "Nostalgie"
+  mood: "Nostalgia"
 )
 
 category4 = Category.create(
   name: "Science-fiction",
-  mood: "Émerveillement"
+  mood: "Wonder"
 )
 
 category5 = Category.create(
@@ -68,7 +68,7 @@ category5 = Category.create(
 
 category6 = Category.create(
   name: "Fantasy",
-  mood: "Évasion"
+  mood: "Evasion"
 )
 
 category7 = Category.create(
@@ -78,7 +78,7 @@ category7 = Category.create(
 
 category8 = Category.create(
   name: "Horreur",
-  mood: "Terreur"
+  mood: "Terror"
 )
 
 category9 = Category.create(
@@ -88,17 +88,17 @@ category9 = Category.create(
 
 category10 = Category.create(
   name: "Comédie",
-  mood: "Amusement"
+  mood: "Fun"
 )
 
 category11 = Category.create(
   name: "Drame",
-  mood: "Mélancolie"
+  mood: "Melancholy"
 )
 
 category12 = Category.create(
   name: "Autobiographique",
-  mood: "Inspirant"
+  mood: "Inspiration"
 )
 
 p Category.all
