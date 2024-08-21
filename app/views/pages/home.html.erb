@@ -1,6 +1,71 @@
-<div class="d-flex">
+<%# <div class="d-flex" data-controller="questionnaire-home">
   <div class="d-flex flex-column align-items-center" style="width: 100vw">
-    <h1>Pages#home</h1>
-    <p>Find me in app/views/pages/home.html.erb</p>
+    <h1 class="fw-bold text-primary mb-4" style="font-size: xx-large" data-toggle-target="question1">What do you want to feel ?</h1>
+    <h1 class="fw-bold text-primary mb-4 d-none" style="font-size: xx-large" data-toggle-target="question2">What are you looking for ?</h1>
+    <h1 class="fw-bold text-primary mb-4 d-none" style="font-size: xx-large" data-toggle-target="question3">Old or recent ?</h1>
+    <%= simple_form_for @suggestion do |f| %>
+      <%# <%= f.input :, label: false, input_html: { data: { toggle_target: "Input1" } } %>
+      <%# <%= f.input :number_of_pages, label: false, input_html: { data: { toggle_target: "Input2" }, class: "d-none" } %>
+      <%# <%= f.input :age_of_book, label: false, input_html: { data: { toggle_target: "Input3" }, class: "d-none" } %>
+      <%# <%= f.submit ">", data: { toggle_target: "Button" }, class: "btn btn-info rounded-pill mt-4 d-none", style: "width: 75px" %>
+    <%# <% end %>
+  <%# </div> %>
+<%# </div> %>
+<%# <%= form_with url: suggestions_path, method: :get, class: "d-flex" do %>
+      <%# <%= text_field_tag :mood,
+            params[:mood],
+            class: "form-control",
+            placeholder: "Type a keyword"
+        %>
+        <%# <%= text_field_tag :pages,
+            params[:pages],
+            class: "form-control",
+            placeholder: "Type a keyword"
+        %>
+        <%# <%= text_field_tag :age,
+            params[:age],
+            class: "form-control",
+            placeholder: "Type a keyword"
+        %>
+      <%# <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+    <%# <% end %>
+
+<%= form_with url: suggestions_path, method: :get, class: "d-flex flex-column", data: { controller: "questionnaire-home" } do %>
+
+  <div data-questionnaire-home-target="question1">
+    <h5>Select your mood</h5>
+    <div class="d-flex flex-wrap justify-content-around">
+      <%= button_tag "Plot", type: "button", name: "mood", value: "Plot", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
+      <%= button_tag "Tension", type: "button", name: "mood", value: "Tension", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
+      <%= button_tag "Nostalgia", type: "button", name: "mood", value: "Nostalgia", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
+      <%= button_tag "Wonder", type: "button", name: "mood", value: "Wonder", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
+      <%= button_tag "Mystere", type: "button", name: "mood", value: "Mystere", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
+      <%= button_tag "Evasion", type: "button", name: "mood", value: "Evasion", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
+      <%= button_tag "Passion", type: "button", name: "mood", value: "Passion", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
+      <%= button_tag "Terror", type: "button", name: "mood", value: "Terror", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
+      <%= button_tag "Excitation", type: "button", name: "mood", value: "Excitation", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
+      <%= button_tag "Fun", type: "button", name: "mood", value: "Fun", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
+      <%= button_tag "Melancholy", type: "button", name: "mood", value: "Melancholy", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
+      <%= button_tag "Inspiration", type: "button", name: "mood", value: "Inspiration", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
+    </div>
   </div>
-</div>
+
+  <div data-questionnaire-home-target="question2" class="d-none">
+    <h5>Select the story length</h5>
+    <div class="d-flex justify-content-around">
+      <%= button_tag "Short Story", type: "button", name: "pages", value: "short story", class: "btn btn-lg btn-outline-primary card card-body", data: { action: "click->questionnaire-home#selectPages" } %>
+      <%= button_tag "Medium Story", type: "button", name: "pages", value: "medium story", class: "btn btn-lg btn-outline-primary card card-body", data: { action: "click->questionnaire-home#selectPages" } %>
+      <%= button_tag "Big Story", type: "button", name: "pages", value: "big story", class: "btn btn-lg btn-outline-primary card card-body", data: { action: "click->questionnaire-home#selectPages" } %>
+      <%= button_tag "Anyway", type: "button", name: "pages", value: "anyway", class: "btn btn-lg btn-outline-primary card card-body", data: { action: "click->questionnaire-home#selectPages" } %>
+    </div>
+  </div>
+
+  <div data-questionnaire-home-target="question3" class="d-none">
+    <h5>Select the age of the story</h5>
+    <div class="d-flex justify-content-around">
+      <%= button_tag "Old", type: "submit", name: "age", value: "old", class: "btn btn-lg btn-outline-primary card card-body", data: { action: "click->questionnaire-home#selectAge" } %>
+      <%= button_tag "Recent", type: "submit", name: "age", value: "recent", class: "btn btn-lg btn-outline-primary card card-body", data: { action: "click->questionnaire-home#selectAge" } %>
+    </div>
+  </div>
+
+<% end %>

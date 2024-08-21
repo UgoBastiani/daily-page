@@ -1,0 +1,19 @@
+<div class="card mb-3" style="max-width: 600px;">
+  <div class ="row g-0">
+    <div class="col-4">
+      <img class="img-fluid rounded-start" src="<%= favorite.book.thumbnail %>" alt="Book Picture" id="img-book">
+    </div>
+      <%# <% if @favorites.read == "True" %>
+    <div class="col-8">
+      <div class="card-body">
+        <ul>
+          <h4>Title</h4> <%= favorite.book.title %><br>
+          <h4>Author</h4> <%= favorite.book.author %><br>
+          <h4>Year</h4> <%= favorite.book.publishing_date %> <br>
+          <%= render "shared/popupshare" %>
+        <p></p>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
