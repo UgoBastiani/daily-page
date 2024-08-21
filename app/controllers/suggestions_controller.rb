@@ -26,8 +26,11 @@ class SuggestionsController < ApplicationController
         @books = @books.where('publishing_date < ?', Date.new(2010))
       when 'new'
         @books = @books.where('publishing_date >= ?', Date.new(2010))
-      end 
-  
+      end
+    end
+    @book = @books.sample
+  end
+
   def add_to_favorites
     @suggestion = Suggestion.find(params[:id])
     current_user.favorites << @suggestion
