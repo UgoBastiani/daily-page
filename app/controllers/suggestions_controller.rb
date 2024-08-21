@@ -25,7 +25,11 @@ class SuggestionsController < ApplicationController
         @books = @books.where('publishing_date < ?', Date.new(2010))
       when 'new'
         @books = @books.where('publishing_date >= ?', Date.new(2010))
-      end
-    end
+      end 
+  
+  def add_to_favorites
+    @suggestion = Suggestion.find(params[:id])
+    current_user.favorites << @suggestion
+    redirect_to @suggestion, notice: 'Suggestion was successfully added to favorites.'
   end
 end
