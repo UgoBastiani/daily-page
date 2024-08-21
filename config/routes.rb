@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   # get 'profile/:id', to: 'profile#show', as: 'profile'
   resource :profile, only: :show
   resources :favorites
+  resources :suggestions, only: [:index, :show]
+  resources :books, only: [:show]
 end

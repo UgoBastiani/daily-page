@@ -1,0 +1,27 @@
+<h1 class="mt-4 mb-4">Suggestion of the Day</h1>
+
+<div class="p-4 mb-4 bg-white rounded">
+
+  <div class="suggestion-detail p-4 bg-light rounded">
+    <h2 class="mb-3" style="font-size: 1rem;"><%= @suggestion.book.description %></h2>
+
+    <div class="d-flex justify-content-end mt-3">
+
+      <%= link_to root_path, class: 'btn btn-success rounded-circle p-2' do %>
+       <i class="fas fa-star"></i>
+      <% end %>
+
+      <%= link_to book_path(@suggestion.book), class: 'btn btn-success rounded-circle p-2' do %>
+        <%# <i class="fas fa-plus"></i> %>
+        <i class="fa-solid fa-circle-plus"></i>
+      <% end %>
+    </div>
+
+  </div>
+</div>
+
+
+<%# <%= link_to "More details", book_path(@suggestion.book), class: 'btn btn-primary mt-3' %>
+<%# <i class="fas fa-plus"></i> %>
+
+<%# <i class="fa-solid fa-circle-plus"></i> %>
