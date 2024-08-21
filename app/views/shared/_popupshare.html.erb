@@ -1,0 +1,36 @@
+<button type="button" class="mb-3 ms-auto btn btn-link p-0" data-bs-toggle="modal" data-bs-target="#shareModal">
+  <i class="fa-solid fa-square-share-nodes text-black fs-1"></i>
+</button>
+
+<div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
+  <div class="modal-dialog d-flex align-items-center" style="height: 100vh; width: 100%vw">
+    <div class="modal-content">
+      <div class="modal-header bg-primary">
+        <h5 class="modal-title text-black" id="shareModalLabel">Share this book !</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex justify-content-around">
+          <%= link_to "#", class: "navbar-brand p-0 m-0" do %>
+            <div class="d-flex flex-column align-items-center logo-container">
+              <i class="fa-regular fa-message text-black fs-1"></i>
+              <div class="logo-caption text-black mt-2">Message</div>
+            </div>
+          <% end %>
+          <%= link_to "#", class: "navbar-brand p-0 m-0" do %>
+            <div class="d-flex flex-column align-items-center logo-container">
+              <i class="fa-brands fa-whatsapp text-black fs-1"></i>
+              <div class="logo-caption text-black mt-2">WhatsApp</div>
+            </div>
+          <% end %>
+          <%= link_to "#", class: "navbar-brand p-0 m-0" do %>
+            <div class="d-flex flex-column align-items-center logo-container">
+              <i class="fa-brands fa-instagram text-black fs-1"></i>
+              <div class="logo-caption text-black mt-2">Instagram</div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

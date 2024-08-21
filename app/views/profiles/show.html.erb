@@ -1,22 +1,104 @@
 <%= content_for :title, "Profile" %>
 
-<div class="profile-container">
-  <h1>Your Profile</h1>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title text-center">Profile</h1>
 
-  <div class="profile-details">
-    <div class="profile-item">
-      <strong>First Name:</strong>
-      <%= current_user&.first_name %>
-    </div>
-    <div class="profile-item">
-      <strong>Last Name:</strong>
-      <%= current_user&.last_name %>
-    </div>
-    <div class="profile-item">
-      <strong>Email:</strong>
-      <%= current_user.email %>
+            <div class="profile-picture mt-2 mb-2">
+              <%# <%= image_tag current_user&.profile_picture || 'default-profile.png', class: "rounded-circle", alt: "Profile Picture", width: 150, height: 150 %> (Profile picture)
+            </div>
+
+            <div class="counter bg-light p-3 rounded">
+              <div class="profile-details">
+                <div class="profile-item">
+                  <strong>First Name:</strong>
+                  <%= current_user&.first_name %>
+                </div>
+                <div class="profile-item">
+                  <strong>Last Name:</strong>
+                  <%= current_user&.last_name %>
+                </div>
+                <div class="profile-item">
+                  <strong>Email:</strong>
+                  <%= current_user.email %>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center mt-2">
+              <%= link_to 'Edit', edit_registration_path(current_user), class: "btn btn-success rounded-pill" %>
+            </div>
+
+            <hr class="my-4">
+
+            <h2 class="mt-4 text-center">Stats</h2>
+
+            <div class="counters mt-3">
+              <div class="row text-center">
+                <div class="col-md-4">
+                  <div class="counter bg-light p-3 rounded">
+                    <h4>Favorites</h4>
+                    <span id="favorites" class="display-4">0</span>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="counter bg-light p-3 rounded">
+                    <h4>Books Read</h4>
+                    <span id="books-read" class="display-4">0</span>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="counter bg-light p-3 rounded">
+                    <h4>Pages Read</h4>
+                    <span id="pages-read" class="display-4">0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <hr class="my-4">
+
+            <h2 class="mt-4 text-center">History</h2>
+
+            <div class="suggestion-calendar mt-3 text-center">
+              <div class="form-group counter bg-light p-3 rounded">
+                <%= label :date, "Select a date:", class: "mr-2" %>
+                <%= date_field :date, class: "form-control", data: { controller: "datepicker" } %>
+              </div>
+
+
+              <% if @suggestions.present? %>
+                <div class="suggestions-list mt-2 mb-2">
+                  <h4>Suggestions for <%= params[:date] %>:</h4>
+                  <ul>
+                    <% @suggestions.each do |suggestion| %>
+                      <li><%= suggestion.content %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              <% else %>
+                <p class="mt-2 mb-2 text-center">No suggestions found for this date.</p>
+              <% end %>
+            </div>
+
+            <hr class="my-4">
+
+            <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do %>
+              <div class="mb-4 text-center">
+                <i class="fa-solid fa-arrow-right-from-bracket text-black fs-1"></i>
+                <div class="text-black mt-2 mb-2">Sign Out</div>
+              </div>
+            <% end %>
+
+            <hr class="my-4">
+
+        </div>
+      </div>
     </div>
   </div>
-
-  <%= link_to 'Edit Profile', edit_registration_path(current_user), class: "btn btn-success" %>
 </div>
+<% dates = Suggestion.dates_for_current_user(current_user) %>
+<%= dates %>
