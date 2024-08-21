@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   # root "posts#index"
   # get 'profile/:id', to: 'profile#show', as: 'profile'
   resource :profile, only: :show
+  resources :favorites
 end

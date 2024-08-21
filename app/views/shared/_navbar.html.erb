@@ -1,13 +1,13 @@
 <div class="navbar navbar-expand-sm navbar-lewagon d-flex">
   <div class="container-fluid justify-content-around align-items-center">
     <% if user_signed_in? %>
-      <%= link_to "#", class: "navbar-brand p-0 m-0" do %>
+      <%= link_to root_path, class: "navbar-brand p-0 m-0" do %>
         <div class="d-flex flex-column align-items-center logo-container">
           <%= image_tag "logo.png"%>
           <div class="logo-caption text-white mt-0.5">Daily</div>
         </div>
       <% end %>
-      <%= link_to "#", class: "navbar-brand p-0 m-0" do %>
+      <%= link_to favorites_path, class: "navbar-brand p-0 m-0" do %>
         <div class="d-flex flex-column align-items-center logo-container">
           <i class="fa-regular fa-bookmark text-white fs-1"></i>
           <div class="logo-caption text-white mt-2">Favorites</div>
