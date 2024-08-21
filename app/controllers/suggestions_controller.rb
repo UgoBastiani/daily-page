@@ -1,6 +1,7 @@
 class SuggestionsController < ApplicationController
 
   def index
+    @suggestion_dates = Suggestion.dates_for_current_user(current_user).to_json
     @books = Book.all
 
     if params[:mood].present?

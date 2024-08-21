@@ -64,15 +64,11 @@
             <h2 class="mt-4 text-center">History</h2>
 
             <div class="suggestion-calendar mt-3 text-center">
-              <%= form_with url: profile_path(current_user), method: :get, local: true, class: "form-inline justify-content-center flex-column align-items-center" do |f| %>
-                <div class="form-group counter bg-light p-3 rounded">
-                  <%= f.label :date, "Select a date:", class: "mr-2" %>
-                  <%= f.date_field :date, value: params[:date] || Date.today, class: "form-control mb-2 calendar-input" %>
-                </div>
-                <div class="form-group mt-2">
-                  <%= f.submit 'Suggestions', class: "btn btn-success rounded-pill" %>
-                </div>
-              <% end %>
+              <div class="form-group counter bg-light p-3 rounded">
+                <%= label :date, "Select a date:", class: "mr-2" %>
+                <%= date_field :date, class: "form-control", data: { controller: "datepicker" } %>
+              </div>
+
 
               <% if @suggestions.present? %>
                 <div class="suggestions-list mt-2 mb-2">
@@ -104,3 +100,5 @@
     </div>
   </div>
 </div>
+<% dates = Suggestion.dates_for_current_user(current_user) %>
+<%= dates %>
