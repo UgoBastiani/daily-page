@@ -1,28 +1,70 @@
 <%= content_for :title, "Profile" %>
 
-<div class="profile-container">
-  <h1>Your Profile</h1>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title text-center">Profile</h1>
 
-  <div class="profile-details">
-    <div class="profile-item">
-      <strong>First Name:</strong>
-      <%= current_user&.first_name %>
-    </div>
-    <div class="profile-item">
-      <strong>Last Name:</strong>
-      <%= current_user&.last_name %>
-    </div>
-    <div class="profile-item">
-      <strong>Email:</strong>
-      <%= current_user.email %>
+            <div class="profile-picture mt-4 mb-4">
+              <%# <%= image_tag current_user&.profile_picture || 'default-profile.png', class: "rounded-circle", alt: "Profile Picture", width: 150, height: 150 %> (Profile picture)
+            </div>
+
+            <div class="profile-details mb-4">
+              <div class="profile-item">
+                <strong>First Name:</strong>
+                <%= current_user&.first_name %>
+              </div>
+              <div class="profile-item">
+                <strong>Last Name:</strong>
+                <%= current_user&.last_name %>
+              </div>
+              <div class="profile-item">
+                <strong>Email:</strong>
+                <%= current_user.email %>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <%= link_to 'Edit Profile', edit_registration_path(current_user), class: "btn btn-success" %>
+            </div>
+
+            <hr class="my-5">
+
+            <h2 class="mt-5 text-center">History</h2>
+
+            <div class="suggestion-calendar mt-3 text-center">
+              <%= form_with url: profile_path(current_user), method: :get, local: true, class: "form-inline justify-content-center flex-column align-items-center" do |f| %>
+                <div class="form-group">
+                  <%= f.label :date, "Select a date:", class: "mr-2" %>
+                  <%= f.date_field :date, value: params[:date] || Date.today, class: "form-control mb-4 calendar-input" %>
+                  <%= f.submit 'View Suggestions', class: "btn btn-success" %>
+                </div>
+              <% end %>
+
+              <% if @suggestions.present? %>
+                <div class="suggestions-list mt-4 mb-4">
+                  <h4>Suggestions for <%= params[:date] %>:</h4>
+                  <ul>
+                    <% @suggestions.each do |suggestion| %>
+                      <li><%= suggestion.content %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              <% else %>
+                <p class="mt-4 mb-4 text-center">No suggestions found for this date.</p>
+              <% end %>
+            </div>
+        </div>
+      </div>
     </div>
   </div>
-
-  <%= link_to 'Edit Profile', edit_registration_path(current_user), class: "btn btn-success" %>
+  
   <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do %>
-        <div class="m-5">
-          <i class="fa-solid fa-arrow-right-from-bracket text-black fs-1"></i>
-          <div class="logo-caption text-black mt-2">Sign Out</div>
-        </div>
-      <% end %>
-</div>
+    <div class="m-5">
+      <i class="fa-solid fa-arrow-right-from-bracket text-black fs-1"></i>
+      <div class="logo-caption text-black mt-2">Sign Out</div>
+    </div>
+  <% end %>
+
