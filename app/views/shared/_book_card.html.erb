@@ -10,7 +10,7 @@
           <h4>Title</h4> <%= book.title %><br>
           <h4>Author</h4> <%= book.author %><br>
           <h4>Year</h4> <%= book.publishing_date %> <br>
-          <%= render "shared/popupshare" %>
+          <%= render "shared/popupshare", id:book.id %>
         <p></p>
         </ul>
       </div>
