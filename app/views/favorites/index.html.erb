@@ -1,8 +1,14 @@
-<div class="">
-  <div>
-    <h1 class ="text-center">favorites list</H1>
-  </div>
 
+  <%# <div>
+    <h1 class ="text-center">favorites list</H1>
+  </div> %>
+<% if @favorites == nil %>
+      <h2> Your list is empty ! </h2>
+      <h4> Add your favorite books </h4>
+      <div type="browse" class="form-actions btn btn-primary rounded-pill" style="width: 200px; mt-15" >
+          <%=  "Sign up" %>
+      </div>
+<%else%>
   <ul class="nav nav-tabs nav-justified" role="tablist">
     <li class="nav-item" role="presentation">
       <a class="nav-link active" id="justified-tab-0" data-bs-toggle="tab" href="#justified-tabpanel-0" role="tab" aria-controls="justified-tabpanel-0" aria-selected="true"> A lire </a>
@@ -14,14 +20,13 @@
   <div class="tab-content pt-5" id="tab-content">
     <div class="tab-pane active" id="justified-tabpanel-0" role="tabpanel" aria-labelledby="justified-tab-0">
       <% @favorites.where(read: false).each do |favorite| %>
-        <%= render "favorite_card", favorite: favorite %>
+        <%= render "favorite_card", favorite: favorite  %>
       <% end %>
     </div>
     <div class="tab-pane" id="justified-tabpanel-1" role="tabpanel" aria-labelledby="justified-tab-1">
       <% @favorites.where(read: true).each do |favorite| %>
-        <%= render "favorite_card", favorite: favorite %>
+        <%= render "favorite_card", favorite: favorite  %>
       <% end %>
     </div>
   </div>
-</div>
-
+<%end%>

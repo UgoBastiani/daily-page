@@ -10,8 +10,8 @@
           <h4>Title</h4> <%= favorite.book.title %><br>
           <h4>Author</h4> <%= favorite.book.author %><br>
           <h4>Year</h4> <%= favorite.book.publishing_date %> <br>
-          <%= render "shared/popupshare" %>
-        <p></p>
+          <%= render "shared/popupshare", id:favorite.id %>
+          <%# <%= render "suggestions/sugg_button" %>
         </ul>
       </div>
     </div>
