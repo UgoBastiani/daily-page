@@ -10,6 +10,7 @@ export default class extends Controller {
 
   selectMood(event) {
     this.storeValue(event)
+    console.log(this.storeValue)
     this.question1Target.classList.add("d-none")
     this.question2Target.classList.remove("d-none")
   }
@@ -23,7 +24,7 @@ export default class extends Controller {
   selectAge(event) {
     this.storeValue(event)
     this.question3Target.classList.add("d-none")
-    this.element.submit() 
+    this.element.submit()
   }
 
   storeValue(event) {
@@ -32,5 +33,6 @@ export default class extends Controller {
     input.name = event.target.name
     input.value = event.target.value
     this.element.appendChild(input)
+    event.preventDefault()
   }
 }
