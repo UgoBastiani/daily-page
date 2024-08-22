@@ -24,7 +24,7 @@ class SuggestionsController < ApplicationController
       case params[:age].downcase
       when 'old'
         @books = @books.where('publishing_date < ?', Date.new(2010))
-      when 'new'
+      when 'recent'
         @books = @books.where('publishing_date >= ?', Date.new(2010))
       end
     end
