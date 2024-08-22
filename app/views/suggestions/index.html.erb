@@ -1,21 +1,9 @@
-<h1 class="mt-4 mb-4">Suggestion of the Day</h1>
-
-<div class="p-4 mb-4 bg-white rounded">
-
+<h1 class="mt-4 mb-2">Suggestion of the Day</h1>
+  <div class="p-4 mb-4 bg-white rounded">
   <div class="suggestion-detail p-4 bg-light rounded">
-    <h2 class="mb-3" style="font-size: 1rem;"><%= @book.description %></h2>
-
+    <h2 class="mb-3" style="font-size: 19px;"><%= @book.description %></h2>
     <div class="d-flex justify-content-end mt-3">
        <%= render "suggestions/sugg_button" %>
-      <%# <%= link_to book_favorites_path(@book), data: {turbo_method: 'POST'}, class: 'btn btn-success me-2 rounded-circle d-flex justify-content-center align-items-center', style: 'height: 50px; width: 50px;' do %>
-        <%# <i class="fa-regular fa-bookmark"></i> %>
-        <%# <%@favorite.create %>
-      <%# <% end %>
-
-      <%# <%= link_to book_path(@book), class: 'btn btn-success me-2 rounded-circle d-flex justify-content-center align-items-center', style: 'height: 50px; width: 50px;' do %>
-        <%# <i class="fa-regular fa-plus"></i> %>
-      <%# <% end %>
     </div>
-
-  </div>
+ </div>
 </div>

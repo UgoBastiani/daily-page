@@ -33,38 +33,147 @@
 <%= form_with url: suggestions_path, method: :get, class: "d-flex flex-column", data: { controller: "questionnaire-home" } do %>
 
   <div data-questionnaire-home-target="question1">
-    <h5>Select your mood</h5>
-    <div class="d-flex flex-wrap justify-content-around">
-      <%= button_tag "Plot", type: "button", name: "mood", value: "Plot", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
-      <%= button_tag "Tension", type: "button", name: "mood", value: "Tension", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
-      <%= button_tag "Nostalgia", type: "button", name: "mood", value: "Nostalgia", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
-      <%= button_tag "Wonder", type: "button", name: "mood", value: "Wonder", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
-      <%= button_tag "Mystere", type: "button", name: "mood", value: "Mystere", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
-      <%= button_tag "Evasion", type: "button", name: "mood", value: "Evasion", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
-      <%= button_tag "Passion", type: "button", name: "mood", value: "Passion", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
-      <%= button_tag "Terror", type: "button", name: "mood", value: "Terror", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
-      <%= button_tag "Excitation", type: "button", name: "mood", value: "Excitation", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
-      <%= button_tag "Fun", type: "button", name: "mood", value: "Fun", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
-      <%= button_tag "Melancholy", type: "button", name: "mood", value: "Melancholy", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
-      <%= button_tag "Inspiration", type: "button", name: "mood", value: "Inspiration", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
+    <h5 class="d-flex justify-content-center m-4">What do you want to feel ?</h5>
+    <div class="d-flex flex-wrap justify-content-evenly" id="q1">
+
+     <div class="card-answer">
+        <%= button_tag "Suspenseful", type: "button", name: "mood", value: "Suspenseful",
+          class: "button-answer",
+          style: "background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.pexels.com/photos/7319068/pexels-photo-7319068.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-size: cover; background-position: center; color: white; text-shadow: 1px 1px 2px black;",
+          data: { action: "click->questionnaire-home#selectMood" } %>
+      </div>
+
+      <div class="card-answer">
+        <%= button_tag "Intense", type: "button", name: "mood", value: "Intense",
+          class: "button-answer",
+          style: "background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.pexels.com/photos/7319478/pexels-photo-7319478.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-size: cover; background-position: center; color: white; text-shadow: 1px 1px 2px black;",
+          data: { action: "click->questionnaire-home#selectMood" } %>
+      </div>
+
+      <div class="card-answer">
+        <%= button_tag "Reflective", type: "button", name: "mood", value: "Reflective",
+          class: "button-answer",
+          style: "background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.pexels.com/photos/2886268/pexels-photo-2886268.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-size: cover; background-position: center; color: white; text-shadow: 1px 1px 2px black;",
+          data: { action: "click->questionnaire-home#selectMood" } %>
+      </div>
+
+      <div class="card-answer">
+        <%= button_tag "Futuristic", type: "button", name: "mood", value: "Futuristic",
+          class: "button-answer",
+          style: "background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.pexels.com/photos/3526022/pexels-photo-3526022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-size: cover; background-position: center; color: white; text-shadow: 1px 1px 2px black;",
+          data: { action: "click->questionnaire-home#selectMood" } %>
+      </div>
+
+      <div class="card-answer">
+        <%= button_tag "Magical", type: "button", name: "mood", value: "Magical",
+          class: "button-answer",
+          style: "background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.pexels.com/photos/1559259/pexels-photo-1559259.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-size: cover; background-position: center; color: white; text-shadow: 1px 1px 2px black;",
+          data: { action: "click->questionnaire-home#selectMood" } %>
+      </div>
+
+      <div class="card-answer">
+        <%= button_tag "Epic", type: "button", name: "mood", value: "Epic",
+          class: "button-answer",
+          style: "background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.pexels.com/photos/6848160/pexels-photo-6848160.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-size: cover; background-position: center top; color: white; text-shadow: 1px 1px 2px black;",
+          data: { action: "click->questionnaire-home#selectMood" } %>
+      </div>
+
+      <div class="card-answer">
+        <%= button_tag "Heartwarming", type: "button", name: "mood", value: "Heartwarming",
+          class: "button-answer",
+          style: "background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.pexels.com/photos/2494701/pexels-photo-2494701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-size: cover; background-position: center; color: white; text-shadow: 1px 1px 2px black;",
+          data: { action: "click->questionnaire-home#selectMood" } %>
+      </div>
+
+      <div class="card-answer">
+        <%= button_tag "Terrifying", type: "button", name: "mood", value: "Terrifying",
+          class: "button-answer",
+          style: "background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.pexels.com/photos/3809379/pexels-photo-3809379.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-size: cover; background-position: center top; color: white; text-shadow: 1px 1px 2px black;",
+          data: { action: "click->questionnaire-home#selectMood" } %>
+      </div>
+
+      <div class="card-answer">
+        <%= button_tag "Exciting", type: "button", name: "mood", value: "Exciting",
+          class: "button-answer",
+          style: "background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.pexels.com/photos/1732370/pexels-photo-1732370.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-size: cover; background-position: center; color: white; text-shadow: 1px 1px 2px black;",
+          data: { action: "click->questionnaire-home#selectMood" } %>
+      </div>
+
+      <div class="card-answer">
+        <%= button_tag "Humorous", type: "button", name: "mood", value: "Humorous",
+          class: "button-answer",
+          style: "background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.pexels.com/photos/1236678/pexels-photo-1236678.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-size: cover; background-position: center; color: white; text-shadow: 1px 1px 2px black;",
+          data: { action: "click->questionnaire-home#selectMood" } %>
+      </div>
+
+      <div class="card-answer">
+        <%= button_tag "Emotional", type: "button", name: "mood", value: "Emotional",
+          class: "button-answer",
+          style: "background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.pexels.com/photos/2865901/pexels-photo-2865901.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-size: cover; background-position: center; color: white; text-shadow: 1px 1px 2px black;",
+          data: { action: "click->questionnaire-home#selectMood" } %>
+      </div>
+
+      <div class="card-answer">
+        <%= button_tag "Inspirational", type: "button", name: "mood", value: "Inspirational",
+          class: "button-answer",
+          style: "background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.pexels.com/photos/26987251/pexels-photo-26987251/free-photo-of-ciel-vacances-femme-monument.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-size: cover; background-position: center; color: white; text-shadow: 1px 1px 2px black;",
+          data: { action: "click->questionnaire-home#selectMood" } %>
+      </div>
     </div>
   </div>
 
   <div data-questionnaire-home-target="question2" class="d-none">
-    <h5>Select the story length</h5>
-    <div class="d-flex justify-content-around">
-      <%= button_tag "Short Story", type: "button", name: "pages", value: "short story", class: "btn btn-lg btn-outline-primary card card-body", data: { action: "click->questionnaire-home#selectPages" } %>
-      <%= button_tag "Medium Story", type: "button", name: "pages", value: "medium story", class: "btn btn-lg btn-outline-primary card card-body", data: { action: "click->questionnaire-home#selectPages" } %>
-      <%= button_tag "Big Story", type: "button", name: "pages", value: "big story", class: "btn btn-lg btn-outline-primary card card-body", data: { action: "click->questionnaire-home#selectPages" } %>
-      <%= button_tag "Anyway", type: "button", name: "pages", value: "anyway", class: "btn btn-lg btn-outline-primary card card-body", data: { action: "click->questionnaire-home#selectPages" } %>
+    <h5 class="d-flex justify-content-center m-4">What are you looking for ?</h5>
+    <div class="d-flex flex-wrap justify-content-around" id="q2">
+
+      <div class="card-answer">
+        <%= button_tag "Short Story", type: "button", name: "pages", value: "short",
+          class: "button-answer",
+          style: "background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.pexels.com/photos/2233865/pexels-photo-2233865.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-size: cover; background-position: center right; color: white; text-shadow: 1px 1px 2px black;",
+          data: { action: "click->questionnaire-home#selectPages" } %>
+      </div>
+
+      <div class="card-answer">
+        <%= button_tag "Medium Story", type: "button", name: "pages", value: "medium",
+          class: "button-answer",
+          style: "background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.pexels.com/photos/5669602/pexels-photo-5669602.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-size: cover; background-position: center; color: white; text-shadow: 1px 1px 2px black;",
+          data: { action: "click->questionnaire-home#selectPages" } %>
+      </div>
+
+       <div class="card-answer">
+        <%= button_tag "Big Story", type: "button", name: "pages", value: "big",
+          class: "button-answer",
+          style: "background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.pexels.com/photos/247599/pexels-photo-247599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-size: cover; background-position: center; color: white; text-shadow: 1px 1px 2px black;",
+          data: { action: "click->questionnaire-home#selectPages" } %>
+      </div>
+
+      <div class="card-answer">
+        <%= button_tag "Anyway", type: "button", name: "pages", value: "Anyway",
+          class: "button-answer",
+          style: "background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.pexels.com/photos/356079/pexels-photo-356079.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-size: cover; background-position: center; color: white; text-shadow: 1px 1px 2px black;",
+          data: { action: "click->questionnaire-home#selectPages" } %>
+      </div>
     </div>
   </div>
 
   <div data-questionnaire-home-target="question3" class="d-none">
-    <h5>Select the age of the story</h5>
-    <div class="d-flex justify-content-around">
-      <%= button_tag "Old", type: "submit", name: "age", value: "old", class: "btn btn-lg btn-outline-primary card card-body", data: { action: "click->questionnaire-home#selectAge" } %>
-      <%= button_tag "Recent", type: "submit", name: "age", value: "recent", class: "btn btn-lg btn-outline-primary card card-body", data: { action: "click->questionnaire-home#selectAge" } %>
+    <h5 class="d-flex justify-content-center m-4">Old or recent book ?</h5>
+    <div class="d-flex justify-content-around" id="q3">
+
+      <div class="card-answer">
+        <%= button_tag "Old", type: "submit", name: "age", value: "old",
+          class: "button-answer",
+          style: "background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.pexels.com/photos/69004/pexels-photo-69004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-size: cover; background-position: center; color: white; text-shadow: 1px 1px 2px black;",
+          data: { action: "click->questionnaire-home#selectAge" } %>
+      </div>
+
+       <div class="card-answer">
+        <%= button_tag "Recent", type: "submit", name: "age", value: "recent",
+          class: "button-answer",
+          style: "background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.pexels.com/photos/267586/pexels-photo-267586.jpeg'); background-size: cover; background-position: center; color: white; text-shadow: 1px 1px 2px black;",
+          data: { action: "click->questionnaire-home#selectAge" } %>
+      </div>
+
     </div>
   </div>
 
