@@ -35,18 +35,9 @@
   <div data-questionnaire-home-target="question1">
     <h5>Select your mood</h5>
     <div class="d-flex flex-wrap justify-content-around">
-      <%= button_tag "Plot", type: "button", name: "mood", value: "Plot", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
-      <%= button_tag "Tension", type: "button", name: "mood", value: "Tension", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
-      <%= button_tag "Nostalgia", type: "button", name: "mood", value: "Nostalgia", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
-      <%= button_tag "Wonder", type: "button", name: "mood", value: "Wonder", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
-      <%= button_tag "Mystere", type: "button", name: "mood", value: "Mystere", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
-      <%= button_tag "Evasion", type: "button", name: "mood", value: "Evasion", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
-      <%= button_tag "Passion", type: "button", name: "mood", value: "Passion", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
-      <%= button_tag "Terror", type: "button", name: "mood", value: "Terror", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
-      <%= button_tag "Excitation", type: "button", name: "mood", value: "Excitation", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
-      <%= button_tag "Fun", type: "button", name: "mood", value: "Fun", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
-      <%= button_tag "Melancholy", type: "button", name: "mood", value: "Melancholy", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
-      <%= button_tag "Inspiration", type: "button", name: "mood", value: "Inspiration", class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
+      <% Category.all.each do |category| %>
+        <%= button_tag category.mood, type: "button", name: category.mood.downcase, value: category.mood, class: "btn btn-lg btn-outline-primary card card-body mb-2", data: { action: "click->questionnaire-home#selectMood" } %>
+      <% end %>
     </div>
   </div>
 
