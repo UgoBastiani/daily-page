@@ -8,7 +8,12 @@
           <h1 class="card-title text-center">Profile</h1>
 
             <div class="profile-picture mt-2 mb-2">
-              <%# <%= image_tag current_user&.profile_picture || 'default-profile.png', class: "rounded-circle", alt: "Profile Picture", width: 150, height: 150 %> (Profile picture)
+            <% if @current_user.photo.attached? %>
+              <%# <%= image_tag current_user&.profile_picture || 'default-profile.png', class: "rounded-circle", alt: "Profile Picture", width: 150, height: 150 %>
+              <%= cl_image_tag @current_user.photo.key, height: 300, width: 400, crop: :fill %>
+              <% else %>
+              (Profile picture)
+              <% end %>
             </div>
 
             <div class="counter bg-light p-3 rounded">
