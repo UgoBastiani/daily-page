@@ -572,7 +572,9 @@ books = [
     number_of_pages: 233,
     publishing_date: '1998-06-01',
     description: "The first in the series about Mma Ramotswe, Botswana's premier female private detective, who solves cases with insight and charm, revealing the cultural and social intricacies of her community.",
-    category: Category.find_by(name: 'Policier') },
+    category: Category.find_by(name: 'Policier'),
+    thumbnail: "https://m.media-amazon.com/images/I/716x3mmokqL._AC_UF1000,1000_QL80_.jpg"
+  },
   { title: 'The Hound of the Baskervilles',
     author: 'Arthur Conan Doyle',
     number_of_pages: 256,
