@@ -1,18 +1,34 @@
-.question {
-  display: none;
-}
-
-.question.active {
-  display: block;
-}
-
 button {
-  margin: 10px;
-  padding: 10px 20px;
+  margin: 0px;
+  padding: 2px 2px;
   font-size: 16px;
   cursor: pointer;
 }
 
 .d-none {
   display: none;
+}
+
+#q1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 6px;
+}
+
+#q2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 6px;
+}
+
+#q3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 6px;
+}
+
+.button-answer {
+  height: 25vh;
+  width: 48vw;
+  border-radius: 8px;
 }
