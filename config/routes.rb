@@ -16,5 +16,7 @@ Rails.application.routes.draw do
   resource :profile, only: :show
   resources :favorites
   resources :suggestions, only: [:index, :show]
-  resources :books, only: [:show]
+  resources :books, only: [:show] do
+    resources :favorites, only: [:create]
+  end
 end

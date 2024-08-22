@@ -1,10 +1,9 @@
 class FavoritesController < ApplicationController
   def create
-    @favorite = Favorite.new(favorite_params)
+    @favorite = Favorite.new
     @favorite.user = current_user
     @favorite.book = Book.find(params[:book_id])
     @favorite.save
-    redirect_to favorite_path
   end
 
   def index
