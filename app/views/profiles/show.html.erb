@@ -65,11 +65,11 @@
 
             <div class="suggestion-calendar mt-3 text-center">
               <div class="border rounded">
-                <%= month_calendar(events: @suggestions, attribute: :created_at) do |date, suggestions| %>
+                <%= week_calendar(events: @suggestions, attribute: :created_at) do |date, suggestions| %>
                   <%= date %>
-                  <ul>
+                  <ul style="list-style-type: none;">
                     <% suggestions.each do |suggestion| %>
-                      <li><%= suggestion.book.title %></li>
+                      <li><%= suggestion.book.thumbnail %></li>
                     <% end %>
                   </ul>
                 <% end %>
@@ -84,11 +84,8 @@
             <% end %>
 
             <hr class="my-4">
-
         </div>
       </div>
     </div>
   </div>
 </div>
-<% dates = Suggestion.dates_for_current_user(current_user) %>
-<%= dates %>
