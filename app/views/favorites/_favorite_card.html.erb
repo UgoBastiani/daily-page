@@ -11,7 +11,7 @@
           <h4>Author</h4> <%= favorite.book.author %><br>
           <h4>Year</h4> <%= favorite.book.publishing_date %> <br>
           <%= render "shared/popupshare", id:favorite.id %>
-          <%= render "suggestions/sugg_button", book: favorite.book %>
+          <%= render "suggestions/sugg_button", book: favorite.book, class:"mb-3 ms-auto btn btn-link p-0" %>
         </ul>
       </div>
     </div>
