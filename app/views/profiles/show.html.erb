@@ -10,7 +10,7 @@
             <div class="profile-picture mt-2 mb-2">
             <% if @current_user.photo.attached? %>
               <%# <%= image_tag current_user&.profile_picture || 'default-profile.png', class: "rounded-circle", alt: "Profile Picture", width: 150, height: 150 %>
-              <%= cl_image_tag @current_user.photo.key, height: 300, width: 400, crop: :fill %>
+              <%= cl_image_tag @current_user.photo.key, height: 350, width: 350, crop: :fill, class: "rounded-circle" %>
               <% else %>
               (Profile picture)
               <% end %>
@@ -46,19 +46,19 @@
                 <div class="col-md-4">
                   <div class="counter bg-light p-3 rounded">
                     <h4>Favorites</h4>
-                    <span id="favorites" class="display-4">0</span>
+                    <span id="favorites" class="display-4"><%= current_user.favorites.count %></span>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="counter bg-light p-3 rounded">
                     <h4>Books Read</h4>
-                    <span id="books-read" class="display-4">0</span>
+                    <span id="books-read" class="display-4"><%= @books_read.count %></span>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="counter bg-light p-3 rounded">
                     <h4>Pages Read</h4>
-                    <span id="pages-read" class="display-4">0</span>
+                    <span id="pages-read" class="display-4"><%= @pages_read %></span>
                   </div>
                 </div>
               </div>
