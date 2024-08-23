@@ -1,9 +1,23 @@
-<h1 class="mt-4 mb-2">Suggestion of the Day</h1>
-  <div class="p-4 mb-4 bg-white rounded">
-  <div class="suggestion-detail p-4 bg-light rounded">
-    <h2 class="mb-3" style="font-size: 19px;"><%= @book.description %></h2>
-    <div class="d-flex justify-content-end mt-3">
-       <%= render "suggestions/sugg_button", book: @book %>
+<div>
+  <div class="p-4 mb-4 bg-white rounded" style="display: inline-block; text-align: left;">
+    <h1 class="mt-4 mb-4" style="text-align: left; width: 100%;">
+      <span style="border-bottom: 10px solid #efef24; padding-bottom: 10px;">Suggestion</span>
+    </h1>
+    <div class="suggestion-detail p-4 bg-light"
+         style="display: inline-block; text-align: left; border-radius: 15px; border: 2px solid #343a40; margin-top: 20px;">
+      <h5 class="mb-3" style="font-size: 14px;"><i><%= @book.description %></i></h5>
     </div>
- </div>
+    <div class="d-flex justify-content-center mt-4" style="gap: 10px;">
+      <!-- Add to Favorites Button -->
+      <%= link_to book_favorites_path(@book), data: { turbo_method: 'POST' }, class: 'btn btn-info d-flex align-items-center justify-content-center rounded-pill', style: 'height: 60px; padding: 0 1rem; width: 100%; max-width: 200px;' do %>
+        <i class="fa-regular fa-bookmark" style="font-size: 1.5rem;"></i>
+        <span style="margin-left: 0.5rem;">Add to Favorites</span>
+      <% end %>
+      <!-- More Details Button -->
+      <%= link_to book_path(@book), class: 'btn btn-success d-flex align-items-center justify-content-center rounded-pill', style: 'height: 60px; padding: 0 1rem; width: 100%; max-width: 200px;' do %>
+        <i class="fa-solid fa-magnifying-glass" style="font-size: 1.5rem;"></i>
+        <span style="margin-left: 0.5rem;">More details</span>
+      <% end %>
+    </div>
+  </div>
 </div>
