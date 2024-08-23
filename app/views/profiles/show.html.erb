@@ -46,19 +46,19 @@
                 <div class="col-md-4">
                   <div class="counter bg-light p-3 rounded">
                     <h4>Favorites</h4>
-                    <span id="favorites" class="display-4">0</span>
+                    <span id="favorites" class="display-4"><%= current_user.favorites.count %></span>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="counter bg-light p-3 rounded">
                     <h4>Books Read</h4>
-                    <span id="books-read" class="display-4">0</span>
+                    <span id="books-read" class="display-4"><%= @books_read.count %></span>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="counter bg-light p-3 rounded">
                     <h4>Pages Read</h4>
-                    <span id="pages-read" class="display-4">0</span>
+                    <span id="pages-read" class="display-4"><%= @pages_read %></span>
                   </div>
                 </div>
               </div>
