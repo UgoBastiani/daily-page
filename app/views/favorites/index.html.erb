@@ -2,12 +2,17 @@
   <%# <div>
     <h1 class ="text-center">favorites list</H1>
   </div> %>
-<% if @favorites == nil %>
+
+<% if @favorites.first == nil %>
+    <div class="text-center">
       <h2> Your list is empty ! </h2>
-      <h4> Add your favorite books </h4>
-      <div type="browse" class="form-actions btn btn-primary rounded-pill" style="width: 200px; mt-15" >
-          <%=  "add favorites" %>
+      <h4> Add some favorite books </h4>
+
+      <%= image_tag "livre.png", class:"rounded mx-auto d-block", alt:"", width: 200 %>
+      <div type="browse" class="btn btn-secondary rounded-pill" style="width: 200px; mt-15" >
+        <%= link_to 'add favorites', suggestions_path%>
       </div>
+    </div>
 <%else%>
   <ul class="nav nav-tabs nav-justified" role="tablist">
     <li class="nav-item" role="presentation">
