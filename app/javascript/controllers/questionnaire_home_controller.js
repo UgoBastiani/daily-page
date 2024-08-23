@@ -35,4 +35,14 @@ export default class extends Controller {
     this.element.appendChild(input)
     event.preventDefault()
   }
+
+  goBackToQuestion1() {
+    this.question2Target.classList.add("d-none")
+    this.question1Target.classList.remove("d-none")
+  }
+
+  goBackToQuestion2() {
+    this.question3Target.classList.add("d-none")
+    this.question2Target.classList.remove("d-none")
+  }
 }
