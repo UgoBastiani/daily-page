@@ -28,13 +28,13 @@ class SuggestionsController < ApplicationController
         @books = @books.where('publishing_date >= ?', Date.new(2010))
       end
     end
-    @book = @books.first
+    @book = @books.sample
     Suggestion.create(user: current_user, book: @book)
   end
 
-  def create
-  end
-
+  # def suggestion_already_created_today?
+  #   current_user.suggestions.where("created_at >= ?", Time.zone.now.beginning_of_day).exists?
+  # end
 
   def add_to_favorites
     @suggestion = Suggestion.find(params[:id])
