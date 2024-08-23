@@ -1,8 +1,9 @@
-      <%= link_to book_favorites_path(book), data: {turbo_method: 'POST'}, class: 'btn btn-success me-2 rounded-circle d-flex justify-content-center align-items-center', style: 'height: 45px; width: 45px;' do %>
+
+      <%= link_to favorite_path(favorite), data: {turbo_method: 'DELETE'}, class: 'btn btn-success me-2 rounded-circle d-flex justify-content-center align-items-center', style: 'height: 45px; width: 45px;' do %>
         <i class="fa-regular fa-bookmark fa-xl"></i>
         <%# <%@favorite.create %>
       <% end %>
 
       <%= link_to book_path(book), class: 'btn btn-success me-1 rounded-circle d-flex justify-content-center align-items-center', style: 'height: 45px; width: 45px;' do %>
-        <i class="fa-regular fa-eye"></i>
+        <i class="fa-solid fa-magnifying-glass fa-lg"></i>
       <% end %>

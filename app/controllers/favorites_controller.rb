@@ -1,5 +1,5 @@
 class FavoritesController < ApplicationController
-  before_action :set_favorite, only: [:mark_as_read, :mark_as_unread]
+  before_action :set_favorite, only: [:mark_as_read, :mark_as_unread, :destroy]
 
   def create
     @favorite = Favorite.new
@@ -27,6 +27,11 @@ class FavoritesController < ApplicationController
     else
       redirect_to favorites_path, alert: 'An error has occurred, please try again.'
     end
+  end
+
+  def destroy
+    @favorite.destroy
+    redirect_to favorites_path
   end
 
   private
