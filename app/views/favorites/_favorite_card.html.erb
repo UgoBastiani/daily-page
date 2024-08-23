@@ -10,8 +10,16 @@
           <h4>Title</h4> <%= favorite.book.title %><br>
           <h4>Author</h4> <%= favorite.book.author %><br>
           <h4>Year</h4> <%= favorite.book.publishing_date %> <br>
+          <div class="d-flex">
           <%= render "shared/popupshare", id:favorite.id %>
-          <%= render "suggestions/sugg_button", book: favorite.book, class:"mb-3 ms-auto btn btn-link p-0" %>
+          <%= render "favorites/fav_button", favorite: favorite, book: favorite.book, class:"mb-3 ms-auto btn btn-link p-0" %>
+            <% if favorite.read %>
+              <%= button_to 'Unread', mark_as_unread_favorite_path(favorite), method: :patch, data: { confirm: 'Are you sure you want to mark this book as unread?' }, class: "btn custom-btn ms-2"%>
+            <% else %>
+              <%= button_to 'Read', mark_as_read_favorite_path(favorite), method: :patch, data: { confirm: 'Are you sure you want to mark this book as read?' }, class: "btn custom-btn ms-2" %>
+            <% end %>
+          </div>
+          <%# <%= render "suggestions/sugg_button" %>
         </ul>
       </div>
     </div>
