@@ -12,7 +12,7 @@
           <h4>Year</h4> <%= favorite.book.publishing_date %> <br>
           <div class="d-flex">
           <%= render "shared/popupshare", id:favorite.id %>
-
+          <%= render "suggestions/sugg_button", book: favorite.book %>
             <% if favorite.read %>
               <%= button_to 'Unread', mark_as_unread_favorite_path(favorite), method: :patch, data: { confirm: 'Are you sure you want to mark this book as unread?' }, class: "btn custom-btn ms-2"%>
             <% else %>
