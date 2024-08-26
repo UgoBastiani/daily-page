@@ -4,6 +4,10 @@ class PagesController < ApplicationController
   end
 
   def questions
-    
+
+  end
+
+  def roulette
+    @favorites = current_user.favorites
   end
 end
