@@ -7,86 +7,153 @@
         <div class="card-body">
           <h1 class="card-title text-center">Profile</h1>
 
-            <div class="profile-picture mt-2 mb-2">
+          <div class="profile-picture mt-2 mb-2 text-center">
             <% if @current_user.photo.attached? %>
-              <%# <%= image_tag current_user&.profile_picture || 'default-profile.png', class: "rounded-circle", alt: "Profile Picture", width: 150, height: 150 %>
               <%= cl_image_tag @current_user.photo.key, height: 350, width: 350, crop: :fill, class: "rounded-circle" %>
-              <% else %>
+            <% else %>
               (Profile picture)
-              <% end %>
+            <% end %>
+          </div>
+
+          <hr class="my-4">
+
+          <!-- Onglets centrés -->
+          <ul class="nav nav-tabs border-0 justify-content-center" role="tablist" id="profile-tabs">
+            <li class="nav-item">
+              <a class="nav-link text-black border-0 active" data-bs-toggle="tab" href="#account" role="tab">
+                Account
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-black border-0" data-bs-toggle="tab" href="#stats" role="tab">
+                Stats
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-black border-0" data-bs-toggle="tab" href="#history" role="tab">
+                History
+              </a>
+            </li>
+          </ul>
+
+          <div class="tab-content mt-4">
+            <!-- Onglet Account -->
+            <div class="tab-pane fade show active" id="account" role="tabpanel">
+              <%# <h2 class="text-center">Account</h2> %>
+              <div class="counter bg-light p-3 rounded">
+                <div class="profile-details">
+                  <div class="profile-item">
+                    <i class="fa-solid fa-book-open-reader"></i> :
+                    <%= current_user&.first_name %> <%= current_user&.last_name %>
+                  </div>
+                  <div class="profile-item">
+                    <i class="fa-regular fa-envelope"></i> :
+                    <%= current_user.email %>
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-center mt-2">
+                <%= link_to 'Edit', edit_registration_path(current_user), class: "btn btn-success rounded-pill" %>
+              </div>
             </div>
 
-            <div class="counter bg-light p-3 rounded">
-              <div class="profile-details">
-                <div class="profile-item">
-                  <i class="fa-solid fa-book-open-reader"></i> :
-                  <%= current_user&.first_name %> <%= current_user&.last_name %>
-                </div>
-                <div class="profile-item">
-                  <i class="fa-regular fa-envelope"></i> :
-                  <%= current_user.email %>
+            <!-- Onglet Stats -->
+            <div class="tab-pane fade" id="stats" role="tabpanel">
+              <%# <h2 class="text-center">Stats</h2> %>
+              <div class="counters mt-3">
+                <div class="row text-center">
+                  <div class="col-md-4">
+                    <div class="counter bg-light p-3 rounded">
+                      <h4>Favorites</h4>
+                      <span id="favorites" class="display-4"><%= current_user.favorites.count %></span>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="counter bg-light p-3 rounded">
+                      <h4>Books Read</h4>
+                      <span id="books-read" class="display-4"><%= @books_read.count %></span>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="counter bg-light p-3 rounded">
+                      <h4>Pages Read</h4>
+                      <span id="pages-read" class="display-4"><%= @pages_read %></span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div class="text-center mt-2">
-              <%= link_to 'Edit', edit_registration_path(current_user), class: "btn btn-success rounded-pill" %>
-            </div>
-
-            <hr class="my-4">
-
-            <h2 class="mt-4 text-center">Stats</h2>
-
-            <div class="counters mt-3">
-              <div class="row text-center">
-                <div class="col-md-4">
-                  <div class="counter bg-light p-3 rounded">
-                    <h4>Favorites</h4>
-                    <span id="favorites" class="display-4"><%= current_user.favorites.count %></span>
+            <!-- Onglet History -->
+            <div class="tab-pane fade" id="history" role="tabpanel">
+              <h2 class="text-center">History</h2>
+              <div class="row mt-3">
+                <% @suggestions.sort_by(&:created_at).reverse.each do |suggestion| %>
+                  <div class="col-md-12 mb-4">
+                    <div class="d-flex align-items-center border p-2 rounded">
+                      <!-- Thumbnail -->
+                      <div class="me-3">
+                        <%= image_tag suggestion.book.thumbnail, class: "img-thumbnail", alt: "Book Thumbnail", height: 10 %>
+                      </div>
+                      <!-- Book Info -->
+                      <div class="flex-grow-1">
+                        <h5 class="mb-1" style="font-size: 0.9rem;"><%= suggestion.book.title %></h5>
+                        <p class="mb-1" style="font-size: 0.8rem;"><%= suggestion.book.author %></p>
+                      </div>
+                      <!-- Date -->
+                      <div>
+                        <p class="mb-0 text-muted" style="font-size: 0.8rem;">
+                          <%= suggestion.created_at.strftime("%d/%m") %>
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="counter bg-light p-3 rounded">
-                    <h4>Books Read</h4>
-                    <span id="books-read" class="display-4"><%= @books_read.count %></span>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="counter bg-light p-3 rounded">
-                    <h4>Pages Read</h4>
-                    <span id="pages-read" class="display-4"><%= @pages_read %></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <hr class="my-4">
-
-            <h2 class="mt-4 text-center">History</h2>
-
-            <div class="suggestion-calendar mt-3 text-center">
-              <div class="border rounded">
-                <%= week_calendar(events: @suggestions, attribute: :created_at) do |date, suggestions| %>
-                  <%= date %>
-                  <ul style="list-style-type: none;">
-                    <% suggestions.each do |suggestion| %>
-                      <li><%= suggestion.book.thumbnail %></li>
-                    <% end %>
-                  </ul>
                 <% end %>
               </div>
-            <hr class="my-4">
+            </div>
 
-            <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do %>
-              <div class="mb-4 text-center">
-                <i class="fa-solid fa-arrow-right-from-bracket text-black fs-1"></i>
-                <div class="text-black mt-2 mb-2">Sign Out</div>
-              </div>
-            <% end %>
 
-            <hr class="my-4">
+
+          </div>
+
+          <hr class="my-4">
+
+          <%= link_to destroy_user_session_path, data: { turbo_method: :delete } do %>
+            <div class="mb-4 text-center">
+              <i class="fa-solid fa-arrow-right-from-bracket text-black fs-1"></i>
+              <div class="text-black mt-2 mb-2">Sign Out</div>
+            </div>
+          <% end %>
+
+          <hr class="my-4">
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  // Fonction pour mettre en gras l'onglet actif et griser les autres
+  function updateActiveTab() {
+    document.querySelectorAll('.nav-link').forEach(function(link) {
+      if (link.classList.contains('active')) {
+        link.style.fontWeight = 'bold';
+        link.style.color = 'black';
+      } else {
+        link.style.fontWeight = 'normal';
+        link.style.color = 'gray';
+      }
+    });
+  }
+
+  // Mettre à jour le style au chargement de la page
+  updateActiveTab();
+
+  // Ajouter un écouteur d'événements pour mettre à jour le style lors du changement d'onglet
+  document.querySelectorAll('.nav-link').forEach(function(link) {
+    link.addEventListener('shown.bs.tab', function() {
+      updateActiveTab();
+    });
+  });
+</script>
