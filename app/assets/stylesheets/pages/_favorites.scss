@@ -1,0 +1,31 @@
+.favorites-text {
+  font-size: 15px;
+}
+
+.mb-1 {
+  font-size: 18px;
+  width: 50vw;
+}
+
+#mark-as-read-button {
+  background-color: #EFEF24;
+  width: 20vw;
+  display: flex;
+  justify-content: center;
+  border-radius: 8px;
+  margin: 5px;
+}
+
+#remove-from-read-button {
+  background-color: #EFEF24;
+  width: 40vw;
+  display: flex;
+  justify-content: center;
+  border-radius: 8px;
+  margin: 5px;
+}
+
+#test {
+  display: flex;
+  justify-content: center;
+}
