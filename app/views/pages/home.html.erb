@@ -29,5 +29,17 @@
         %>
       <%# <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
     <%# <% end %>
+<div class="container">
+  <%= image_tag 'home_image.png', alt: 'image home' %>
+</div>
 
-<%= link_to 'All Questions', '/questions' %>
+<div class="container" id="title-daily-page">
+  <h1>Daily Page</h1>
+</div>
+
+<div class="container" id="text-discover">
+  <h2>Discover</h2>
+  <%= link_to '/questions' do %>
+    <i class="fa-solid fa-arrow-right icon-with-circle"></i>
+  <% end %>
+</div>
