@@ -11,4 +11,8 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true
+
+  def has_favorite?(book)
+    favorites.exists?(book_id: book.id)
+  end
 end
