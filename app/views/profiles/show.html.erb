@@ -19,15 +19,11 @@
             <div class="counter bg-light p-3 rounded">
               <div class="profile-details">
                 <div class="profile-item">
-                  <strong>First Name:</strong>
-                  <%= current_user&.first_name %>
+                  <i class="fa-solid fa-book-open-reader"></i> :
+                  <%= current_user&.first_name %> <%= current_user&.last_name %>
                 </div>
                 <div class="profile-item">
-                  <strong>Last Name:</strong>
-                  <%= current_user&.last_name %>
-                </div>
-                <div class="profile-item">
-                  <strong>Email:</strong>
+                  <i class="fa-regular fa-envelope"></i> :
                   <%= current_user.email %>
                 </div>
               </div>
