@@ -1,0 +1,24 @@
+<div class="d-flex flex-column justify-content-center align-items-center" style="height:; width: 95vw">
+  <div class=" d-flex">
+    <% @favorites.each do |favorite| %>
+      <div><img class="img-fluid rounded-start" src="<%= favorite.book.thumbnail %>" alt="Book Picture" id="img-book" style="margin-right: 10px;"></div>
+    <% end %>
+  </div>
+  <%# <div>
+    <button id="start">Start roulette</button>
+    <button id="stop">Stop roulette</button>
+  </div> %>
+</div>
+
+<div data-controller="roulette">
+  <div id="roulette">
+      <div>...</div>
+      <div>...</div>
+      <div>...</div>
+      <div>...</div>
+  </div>
+  <div>
+    <button id="start">Start roulette</button>
+    <button id="stop">Stop roulette</button>
+  </div>
+</div>

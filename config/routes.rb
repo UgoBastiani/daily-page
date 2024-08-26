@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   get "/questions", to: 'pages#questions'
+  get "/next_book", to: 'pages#roulette'
 
   resources :suggestions, only: [:index, :show, :create]
 
