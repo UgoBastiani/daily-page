@@ -21,7 +21,7 @@
 
   </head>
 
-  <body>
+  <body class="<%= 'home-page' if current_page?(root_path) %>">
     <%= render "shared/flashes" %>
     <div style="margin-bottom: 68px">
     <%= yield %>

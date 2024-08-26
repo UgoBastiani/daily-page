@@ -1,1 +1,50 @@
 // Specific CSS for your home-page
+.home-page {
+  background-color: black;
+}
+
+img {
+  height: 68vh;
+  width: 97vw;
+}
+
+#title-daily-page {
+  color: white;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#title-daily-page h1 {
+  font-size: 45px;
+}
+
+#text-discover {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#text-discover h2 {
+  padding-top: 20px;
+  padding-right: 20px;
+}
+
+.icon-with-circle {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  text-align: center;
+  line-height: 50px;
+  font-size: 24px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.icon-with-circle {
+  color: black;
+}
