@@ -1,6 +1,6 @@
 <%= content_for :title, "Profile" %>
 
-<div class="container mt-5">
+<div class="container mt-5" data-controller="back">
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
@@ -85,8 +85,8 @@
               </div>
             </div>
 
-            <!-- Onglet History -->
-            <div class="tab-pane fade" id="history" role="tabpanel">
+          <!-- Onglet History -->
+          <div class="tab-pane fade" id="history" role="tabpanel">
             <!-- Zone de texte pour le mois et l'année -->
             <div class="mb-4" style="font-size: 1.2rem; font-weight: bold;">
               <span style="border-bottom: 5px solid #efef24; padding-bottom: 5px;">
@@ -97,7 +97,7 @@
             <div class="row mt-3">
               <% @suggestions.sort_by(&:created_at).reverse.each do |suggestion| %>
                 <div class="col-md-12 mb-4">
-                  <div class="d-flex align-items-center p-3 mb-3" style="border-radius: 15px; border: 1px solid #343a40; background-color: #f8f9fa;">
+                  <div class="d-flex align-items-center p-3 mb-3" style="border-radius: 15px; border: 1px solid #343a40; background-color: #f8f9fa; position: relative;">
                     <!-- Thumbnail -->
                     <div class="me-3" style="height: 100px; display: flex; justify-content: center; align-items: center; overflow: hidden; border-radius: 5px;">
                       <%= image_tag suggestion.book.thumbnail, class: "img-thumbnail", alt: "Book Thumbnail", style: "max-height: 100%; width: 69px; object-fit: contain;" %>
@@ -105,21 +105,33 @@
                     <!-- Book Info -->
                     <div class="flex-grow-1 d-flex flex-column justify-content-between">
                       <div>
-                        <h5 class="mb-2" style="font-size: 0.9rem;"><%= suggestion.book.title %></h5>
-                        <p class="mb-2" style="font-size: 0.8rem;"><%= suggestion.book.author %></p>
+                        <h5 class="mb-2 me-5" style="font-size: 0.9rem;"><%= suggestion.book.title %></h5>
+                        <p class="mb-2 me-5" style="font-size: 0.8rem;"><%= suggestion.book.author %></p>
                       </div>
                       <!-- Date -->
                       <p class="mb-0" style="font-size: 0.6rem; margin: 0;">
-                        <span style="background-color: #000; color: #fff; padding: 5px 10px; border-radius: 5px;">
+                        <span style="background-color: #302F2F; color: #fff; padding: 5px 10px; border-radius: 5px;">
                           Suggested on: <%= suggestion.created_at.strftime("%B %d, %Y") %>
                         </span>
                       </p>
+                    </div>
+                    <!-- Icon -->
+                    <div class="position-absolute end-0 top-50 translate-middle-y me-2" style="cursor: pointer;">
+                      <!-- Remplacez le code d'icône ci-dessous par le code HTML de votre icône -->
+                    <div class="d-flex">
+                      <div class="d-flex justify-content-center align-items-center">
+                        <%= link_to book_path(suggestion.book, return_to_history: true), class: 'btn btn-success rounded-circle d-flex justify-content-center align-items-center m-1', style: 'height: 45px; width: 45px;' do %>
+                          <i class="fa-regular fa-eye fa-lg"></i>
+                        <% end %>
+                      </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               <% end %>
             </div>
           </div>
+
 
 
 
