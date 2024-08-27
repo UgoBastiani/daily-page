@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get "/questions", to: 'pages#questions'
   get "/next_book", to: 'pages#roulette'
+  get "/last_suggestion", to: 'suggestions#last_suggestion'
 
   resources :suggestions, only: [:index, :show, :create]
 

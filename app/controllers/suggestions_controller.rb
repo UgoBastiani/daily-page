@@ -41,4 +41,9 @@ class SuggestionsController < ApplicationController
     current_user.favorites << @suggestion
     redirect_to @suggestion, notice: 'Suggestion was successfully added to favorites.'
   end
+
+
+  def last_suggestion
+    @suggestion = Suggestion.last
+  end
 end
