@@ -14,19 +14,13 @@ class FavoritesController < ApplicationController
 
 
   def mark_as_read
-    if @favorite.update(read: true)
-      redirect_to favorites_path, notice: 'The book has been marked as read.'
-    else
-      redirect_to favorites_path, alert: 'An error has occurred, please try again.'
-    end
+    @favorite.update(read: true)
+    redirect_to favorites_path(anchor: 'justified-tabpanel-0'), notice: 'The book has been marked as read.'
   end
 
   def mark_as_unread
-    if @favorite.update(read: false)
-      redirect_to favorites_path, notice: 'The book has been marked as unread.'
-    else
-      redirect_to favorites_path, alert: 'An error has occurred, please try again.'
-    end
+    @favorite.update(read: false)
+    redirect_to favorites_path(anchor: 'justified-tabpanel-1'), notice: 'The book has been marked as unread.'
   end
 
   def destroy
