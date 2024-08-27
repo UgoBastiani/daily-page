@@ -3,6 +3,7 @@
   "description": "Daily Page helps readers and yet-to-be-readers discover their next books. Tell us what you'd like to read, and you'll help you find THE book.",
   "display": "fullscreen",
   "name": "Daily Page",
+  "start_url": "/",
   "icons": [
     <% files = Dir.entries(Rails.root.join("app/assets/images/icons/")).select {|f| !File.directory? f} %>
     <% files.each_with_index do |file, index| %>
