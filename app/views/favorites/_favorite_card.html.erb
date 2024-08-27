@@ -24,9 +24,9 @@
             </li>
             <li id="test">
               <% if favorite.read %>
-                <%= button_to 'Remove from Read', mark_as_unread_favorite_path(favorite), method: :patch, data: { confirm: 'Are you sure you want to mark this book as unread?' }, class: "dropdown-item", id: "remove-from-read-button" %>
+                <%= button_to 'Remove from Read', mark_as_unread_favorite_path(favorite), method: :patch, data: { turbo: false }, class: "dropdown-item", id: "remove-from-read-button" %>
               <% else %>
-                <%= button_to 'Read', mark_as_read_favorite_path(favorite), method: :patch, data: { confirm: 'Are you sure you want to mark this book as read?' }, class: "dropdown-item", id: "mark-as-read-button" %>
+                <%= button_to 'Read', mark_as_read_favorite_path(favorite), method: :patch, data: { turbo: false }, class: "dropdown-item", id: "mark-as-read-button" %>
               <% end %>
             </li>
           </ul>
