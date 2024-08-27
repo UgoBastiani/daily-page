@@ -40,3 +40,29 @@ button {
   color: rgb(5, 2, 2);
   border: solid 1px;
 }
+
+.small-text {
+  font-size: 0.75rem; /* Taille de police réduite pour le texte */
+}
+
+.smaller-result {
+  font-size: 1.5rem; /* Taille de police réduite pour les résultats */
+}
+
+.equal-height {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Assure que chaque .counter prend la hauteur totale disponible */
+}
+
+.equal-height .counter {
+  height: 100%; /* S'assure que chaque .counter prend la hauteur totale disponible */
+}
+
+.counter {
+  border-radius: 15px;
+  border: 1px solid #343a40;
+  background-color: #f8f9fa;
+  padding: 15px;
+}
