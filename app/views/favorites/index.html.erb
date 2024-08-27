@@ -19,15 +19,15 @@
         <span style="border-bottom: 10px solid #EFEF24; padding-bottom: 10px;">Favorites</span>
       </h1>
     </div>
-    <ul class="nav nav-tabs nav-justified" role="tablist" data-controller="tabs">
-    <li class="nav-item" role="presentation">
-      <a class="nav-link active" id="justified-tab-0" data-bs-toggle="tab" href="#justified-tabpanel-0" role="tab" aria-controls="justified-tabpanel-0" aria-selected="true" style="color: black;"> To Read </a>
+    <ul class="nav nav-tabs nav-justified border border-2 rounded" role="tablist" data-controller="tabs">
+    <li class="nav-item " role="presentation">
+      <a class="nav-link active border border-2 rounded-3" id="justified-tab-0" data-bs-toggle="tab" href="#justified-tabpanel-0" role="tab" aria-controls="justified-tabpanel-0" aria-selected="true" style="color: black;"> To Read 📚 </a>
     </li>
-    <li class="nav-item" role="presentation">
-      <a class="nav-link" id="justified-tab-1" data-bs-toggle="tab" href="#justified-tabpanel-1" role="tab" aria-controls="justified-tabpanel-1" aria-selected="false" style="color: black;"> Read </a>
+    <li class="nav-item border border-2 rounded-3" role="presentation">
+      <a class="nav-link" id="justified-tab-1" data-bs-toggle="tab" href="#justified-tabpanel-1" role="tab" aria-controls="justified-tabpanel-1" aria-selected="false" style="color: black;"> Read 📘 </a>
     </li>
   </ul>
-  <div class="tab-content pt-5" id="tab-content">
+  <div class="tab-content pt-5 " id="tab-content">
     <div class="tab-pane active" id="justified-tabpanel-0" role="tabpanel" aria-labelledby="justified-tab-0">
       <% @favorites.where(read: false).each do |favorite| %>
         <%= render "favorite_card", favorite: favorite  %>
