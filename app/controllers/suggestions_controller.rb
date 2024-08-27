@@ -1,5 +1,4 @@
 class SuggestionsController < ApplicationController
-
   def index
     @suggestion_dates = Suggestion.dates_for_current_user(current_user).to_json
     @books = Book.all
@@ -41,7 +40,6 @@ class SuggestionsController < ApplicationController
     current_user.favorites << @suggestion
     redirect_to @suggestion, notice: 'Suggestion was successfully added to favorites.'
   end
-
 
   def last_suggestion
     @suggestion = Suggestion.last
