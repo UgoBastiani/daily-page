@@ -82,3 +82,12 @@ img {
   left: 50%;
   transform: translateX(-50%);
 }
+
+.btn-back-custom {
+  background-color: #302F2F;
+  color: white;
+}
+
+.btn-back-custom:hover {
+  background-color: #444343;
+}
