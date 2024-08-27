@@ -1,7 +1,9 @@
 <%= form_with url: suggestions_path, method: :get, class: "d-flex flex-column", data: { controller: "questionnaire-home" } do %>
 
-  <div data-questionnaire-home-target="question1">
-    <h5 class="d-flex justify-content-center m-4">What do you want to feel ?</h5>
+  <div data-questionnaire-home-target="question1" id="quest1">
+  <h5 class="d-flex justify-content-center m-4 position-relative text-center" style="padding-bottom: 30px;">
+          What do you want to feel during reading?
+      </h5>
     <div class="d-flex flex-wrap justify-content-evenly" id="q1">
 
      <div class="card-answer">
@@ -90,8 +92,10 @@
     </div>
   </div>
 
-  <div data-questionnaire-home-target="question2" class="d-none">
-    <h5 class="d-flex justify-content-center m-4">How long would you like your suggestion to be ?</h5>
+    <div data-questionnaire-home-target="question2" class="d-none" id="quest2">
+      <h5 class="d-flex justify-content-center m-4 position-relative text-center" style="padding-bottom: 30px;">
+          How long would you like your suggestion to be?
+      </h5>
     <div class="d-flex flex-wrap justify-content-around mb-4" id="q2">
 
       <div class="card-answer">
@@ -121,13 +125,15 @@
           style: "background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.pexels.com/photos/356079/pexels-photo-356079.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-size: cover; background-position: center; color: white; text-shadow: 1px 1px 2px black;",
           data: { action: "click->questionnaire-home#selectPages" } %>
       </div>
-       <button type="button" class="btn btn-back mb-4" data-action="click->questionnaire-home#goBackToQuestion1">Back</button>
+       <button type="button" class="btn btn-back mb-4 mt-3" data-action="click->questionnaire-home#goBackToQuestion1">Back</button>
     </div>
   </div>
 
-  <div data-questionnaire-home-target="question3" class="d-none">
+  <div data-questionnaire-home-target="question3" class="d-none" id="quest3">
       <div class="d-flex flex-column align-items-center">
-    <h5 class="d-flex justify-content-center m-4">Are you in the mood for a timeless classic or a new release?</h5>
+    <h5 class="d-flex justify-content-center m-4 position-relative text-center" style="padding-bottom: 30px;">
+          Are you in the mood for a timeless classic or a new release?
+      </h5>
     <div class="d-flex justify-content-around mb-2" id="q3">
 
       <div class="card-answer">
@@ -144,7 +150,7 @@
           data: { action: "click->questionnaire-home#selectAge" } %>
       </div>
       </div>
-        <button type="button" class="btn btn-back" data-action="click->questionnaire-home#goBackToQuestion2">Back</button>
+        <button type="button" class="btn btn-back mt-3" data-action="click->questionnaire-home#goBackToQuestion2">Back</button>
       </div>
       </div>
     </div>
