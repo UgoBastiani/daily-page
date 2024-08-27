@@ -1,4 +1,31 @@
-<div class="roulette-container" data-controller="roulette" data-roulette-favorites-value="<%= @favorites.to_json %>">
-    <div class="wrap" data-roulette-target='list'>
-    </div>
+
+
+<div data-controller="roulette">
+  <div class="preview__roulette roulette" style="padding: 10px;">
+    <ul class="roulette__list">
+      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--yellow">0</div></li>
+      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--teal">1</div></li>
+      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--pink">2</div></li>
+      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--yellow">3</div></li>
+      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--yellow">4</div></li>
+      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--pink">5</div></li>
+      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--purple">6</div></li>
+      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--teal">7</div></li>
+      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--green">8</div></li>
+      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--purple">9</div></li>
+      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--teal">10</div></li>
+      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--green">11</div></li>
+      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--purple">12</div></li>
+      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--pink">13</div></li>
+      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--teal">14</div></li>
+      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--purple">15</div></li>
+      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--purple">16</div></li>
+      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--pink">17</div></li>
+      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--green">18</div></li>
+      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--pink">19</div></li>
+    </ul>
+  </div>
+
+  <button data-action="click->roulette#start">Start roulette</button>
+  <button data-action="click->roulette#stop">Stop roulette</button>
 </div>
