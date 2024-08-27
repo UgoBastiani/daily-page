@@ -8,6 +8,9 @@ class PagesController < ApplicationController
   end
 
   def roulette
-    @favorites = current_user.favorites
+    @favorites = []
+    current_user.favorites.each do |favorite|
+      @favorites << favorite.book
+    end
   end
 end
