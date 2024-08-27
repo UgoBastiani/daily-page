@@ -18,7 +18,7 @@
           <hr class="my-4">
 
           <!-- Onglets centrés -->
-          <ul class="nav nav-tabs border-0 justify-content-center" role="tablist" id="profile-tabs">
+          <ul class="nav nav-tabs border-0" role="tablist" id="profile-tabs">
             <li class="nav-item">
               <a class="nav-link text-black border-0 active" data-bs-toggle="tab" href="#account" role="tab">
                 Account
@@ -87,31 +87,39 @@
 
             <!-- Onglet History -->
             <div class="tab-pane fade" id="history" role="tabpanel">
-              <h2 class="text-center">History</h2>
-              <div class="row mt-3">
-                <% @suggestions.sort_by(&:created_at).reverse.each do |suggestion| %>
-                  <div class="col-md-12 mb-4">
-                    <div class="d-flex align-items-center border p-2 rounded">
-                      <!-- Thumbnail -->
-                      <div class="me-3">
-                        <%= image_tag suggestion.book.thumbnail, class: "img-thumbnail", alt: "Book Thumbnail", height: 10 %>
-                      </div>
-                      <!-- Book Info -->
-                      <div class="flex-grow-1">
-                        <h5 class="mb-1" style="font-size: 0.9rem;"><%= suggestion.book.title %></h5>
-                        <p class="mb-1" style="font-size: 0.8rem;"><%= suggestion.book.author %></p>
+            <!-- Zone de texte pour le mois et l'année -->
+            <div class="mb-4" style="font-size: 1.2rem; font-weight: bold;">
+              <span style="border-bottom: 5px solid #efef24; padding-bottom: 5px;">
+                <%= Time.now.strftime("%B %Y") %> <!-- Affiche le mois en lettres et l'année actuelle -->
+              </span>
+            </div>
+
+            <div class="row mt-3">
+              <% @suggestions.sort_by(&:created_at).reverse.each do |suggestion| %>
+                <div class="col-md-12 mb-4">
+                  <div class="d-flex align-items-center p-3 mb-3" style="border-radius: 15px; border: 1px solid #343a40; background-color: #f8f9fa;">
+                    <!-- Thumbnail -->
+                    <div class="me-3" style="height: 100px; display: flex; justify-content: center; align-items: center; overflow: hidden; border-radius: 5px;">
+                      <%= image_tag suggestion.book.thumbnail, class: "img-thumbnail", alt: "Book Thumbnail", style: "max-height: 100%; width: 69px; object-fit: contain;" %>
+                    </div>
+                    <!-- Book Info -->
+                    <div class="flex-grow-1 d-flex flex-column justify-content-between">
+                      <div>
+                        <h5 class="mb-2" style="font-size: 0.9rem;"><%= suggestion.book.title %></h5>
+                        <p class="mb-2" style="font-size: 0.8rem;"><%= suggestion.book.author %></p>
                       </div>
                       <!-- Date -->
-                      <div>
-                        <p class="mb-0 text-muted" style="font-size: 0.8rem;">
-                          <%= suggestion.created_at.strftime("%d/%m") %>
-                        </p>
-                      </div>
+                      <p class="mb-0" style="font-size: 0.6rem; margin: 0;">
+                        <span style="background-color: #000; color: #fff; padding: 5px 10px; border-radius: 5px;">
+                          Suggested on: <%= suggestion.created_at.strftime("%B %d, %Y") %>
+                        </span>
+                      </p>
                     </div>
                   </div>
-                <% end %>
-              </div>
+                </div>
+              <% end %>
             </div>
+          </div>
 
 
 
