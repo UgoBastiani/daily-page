@@ -1,6 +1,4 @@
-import { Controller } from "stimulus";
-
-const Roulette = (function () {
+export const Roulette = (function () {
 
   const rotationStopEventName = "rotationStop";
   const rotationStartEventName = "rotationStart";
@@ -24,14 +22,14 @@ const Roulette = (function () {
           this.index = index;
           this.element = element;
 
-          // let wrapper = document.createElement("li");
-          // wrapper.classList.add(roulettePrizeClass);
-          // wrapper.style.marginRight = `${spacing}px`;
-          // wrapper.style.minWidth = `${width}px`;
-          // wrapper.style.minHeight = `${height}px`;
-          // wrapper.appendChild(element);
+          let wrapper = document.createElement("li");
+          wrapper.classList.add(roulettePrizeClass);
+          wrapper.style.marginRight = `${spacing}px`;
+          wrapper.style.minWidth = `${width}px`;
+          wrapper.style.minHeight = `${height}px`;
+          wrapper.appendChild(element);
 
-          this.wrapper = element.parentElement;
+          this.wrapper = wrapper;
       }
 
   }
@@ -43,7 +41,7 @@ const Roulette = (function () {
               spacing = 10,
               acceleration = 350,
               fps = 40,
-              // audio = "libs/vanillaRoulette/click.wav",
+              audio = "libs/vanillaRoulette/click.wav",
               selector = ":scope > *",
               stopCallback = null,
               startCallback = null
@@ -61,30 +59,27 @@ const Roulette = (function () {
           if (!node)
               throw ContainerUndefinedException;
 
-          // node.classList.add(rouletteClass);
+          node.classList.add(rouletteClass);
 
-          // let list = document.createElement("ul");
-          let list = document.querySelector("ul.roulette__list");
-          // list.classList.add(rouletteListClass);
+          let list = document.createElement("ul");
+          list.classList.add(rouletteListClass);
 
-          let childNodes = [...list.querySelectorAll(selector)];
-
+          let childNodes = [...node.querySelectorAll(selector)];
           if (!childNodes.length)
               throw ItemsNotFoundException;
-          // let injector = childNodes[0].parentElement
+          let injector = childNodes[0].parentElement
           let maxWidth = Math.max(...childNodes.map(x => x.clientWidth));
           let maxHeight = Math.max(...childNodes.map(x => x.clientHeight));
           let prizes = childNodes.map((el, i) => new Prize(el, i, spacing, maxWidth, maxHeight));
-
-          // for (let prize of prizes)
-          //     list.appendChild(prize.wrapper);
+          for (let prize of prizes)
+              list.appendChild(prize.wrapper);
 
           node.style.padding = `${spacing}px`;
-          // injector.appendChild(list);
+          injector.appendChild(list);
 
-          // let player = typeof audio === "string" ? new Audio(audio) : audio && audio.play ? audio : null;
-          // if (player && !player.clone)
-          //     player.clone = player.cloneNode ? player.cloneNode : () => player;
+          let player = typeof audio === "string" ? new Audio(audio) : audio && audio.play ? audio : null;
+          if (player && !player.clone)
+              player.clone = player.cloneNode ? player.cloneNode : () => player;
 
           this.container = node;
           this.list = list;
@@ -93,7 +88,7 @@ const Roulette = (function () {
           this.acceleration = acceleration;
           this.width = (spacing + maxWidth) * prizes.length;
           this.prizeWidth = maxWidth;
-          // this.audio = player;
+          this.audio = player;
           this.fps = fps;
           rotationTokens.set(this, -1);
 
@@ -113,6 +108,7 @@ const Roulette = (function () {
       }
 
       rotateTo(block, options) {
+          
           if (this.rotates)
               throw RotationIsAlreadyActiveException;
           let numBlock = Number(block);
@@ -186,8 +182,8 @@ const Roulette = (function () {
 
   function rotateForward(pixels) {
       this.container.dispatchEvent(new CustomEvent(rotationStartEventName, { detail: { prize: this.selectedPrize } }));
-      pixels = Math.abs(pixels);
 
+      pixels = Math.abs(pixels);
       let starter = Math.abs(Number(this.firstBlock.wrapper.style.marginLeft.replace("px", "")));
 
       let k = this.acceleration;
@@ -270,32 +266,3 @@ const Roulette = (function () {
 
   return Roulette;
 })();
-
-export default class extends Controller {
-  static values = { favoriteCount: Number }
-
-  connect() {
-    this.roulette = new Roulette(".roulette", {
-      spacing: 10,
-      acceleration: 350,
-      fps: 40,
-      selector: ":scope > *",
-      stopCallback: function({detail: { prize }}) {
-          console.log("stop");
-          console.log(`Selected prize index is: ${prize.index}`);
-      },
-
-      startCallback: function({detail: { prize }}) {
-          console.log("start");
-      }
-    })
-  }
-
-  start() {
-    this.roulette.rotateTo(12, { tracks: 1, random: true });
-  }
-
-  stop() {
-    this.roulette.stop();
-  }
-}
