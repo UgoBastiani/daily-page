@@ -8,7 +8,7 @@
             <%# <div class ="yellowcolor"> %>
               <div class="d-flex flex-column align-items-center logo-container <%= "yellowcolor" if current_page?(questions_path) %>">
                 <i class="fa-solid fa-house fs-1"></i>
-                <div class="logo-caption mt-2">Suggestion</div>
+                <div class="logo-caption mt-1">Suggestion</div>
               </div>
             <%# </div> %>
           <% end %>
@@ -16,28 +16,28 @@
 
             <div class="d-flex flex-column align-items-center logo-container  <%= "yellowcolor" if current_page?(favorites_path) %>">
               <i class="fa-regular fa-bookmark fs-1"></i>
-              <div class="logo-caption mt-2">Favorites</div>
+              <div class="logo-caption mt-1">Favorites</div>
             </div>
           <% end %>
           <%= link_to next_book_path, class: "navbar-brand p-0 m-0" do %>
 
             <div class="d-flex flex-column align-items-center logo-container <%= "yellowcolor" if current_page?(next_book_path) %>">
               <i class="fa-solid fa-dice fs-1"></i>
-              <div class="logo-caption mt-2">NB</div>
+              <div class="logo-caption mt-1">NB</div>
             </div>
           <% end %>
           <%= link_to profile_path, class: "navbar-brand p-0 m-0" do %>
 
             <div class="d-flex flex-column align-items-center logo-container <%= "yellowcolor" if current_page?(profile_path) %>">
               <i class="fa-regular fa-user fs-1"></i>
-              <div class="logo-caption mt-2">Profile</div>
+              <div class="logo-caption mt-1">Profile</div>
             </div>
           <% end %>
         <% else %>
           <%= link_to new_user_session_path, class: "navbar-brand p-0 m-0" do %>
             <div class="d-flex flex-column align-items-center logo-container">
               <i class="fa-regular fa-user text-white fs-1"></i>
-              <div class="logo-caption text-white mt-2">Sign In</div>
+              <div class="logo-caption text-white mt-1">Sign In</div>
             </div>
           <% end %>
           <%= link_to "#", class: "navbar-brand p-0 m-0" do %>
@@ -49,7 +49,7 @@
           <%= link_to new_user_registration_path, class: "navbar-brand p-0 m-0" do %>
             <div class="d-flex flex-column align-items-center logo-container">
               <i class="fa-regular fa-user text-white fs-1"></i>
-              <div class="logo-caption text-white mt-2">Sign Up</div>
+              <div class="logo-caption text-white mt-1">Sign Up</div>
             </div>
           <% end %>
 
