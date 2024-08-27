@@ -1,11 +1,15 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: black;
+  // background: black;
   height: 65px;
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 25px;
+  padding-top: 20px;
 }
 
 .navbar-lewagon .navbar-brand img {
@@ -28,4 +32,9 @@
 } */
 .yellowcolor{
   color:rgb(239, 239, 36);
+}
+.container-fluid {
+  background-color: black;
+  border-radius: 20px;
+
 }
