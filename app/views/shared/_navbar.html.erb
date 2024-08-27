@@ -3,10 +3,10 @@
   <div class="container-fluid justify-content-around align-items-center ">
 
       <% if user_signed_in? %>
-        <%= link_to root_path, class: "navbar-brand p-0 m-0" do %>
+        <%= link_to questions_path, class: "navbar-brand p-0 m-0" do %>
           <%# <%= if current_page?(root_path)%>
             <%# <div class ="yellowcolor"> %>
-              <div class="d-flex flex-column align-items-center logo-container" <%= "yellowcolor" if current_page?(favorites_path) %>">
+              <div class="d-flex flex-column align-items-center logo-container <%= "yellowcolor" if current_page?(questions_path) %>">
                 <i class="fa-solid fa-house fs-1"></i>
                 <div class="logo-caption mt-2">Suggestion</div>
               </div>
