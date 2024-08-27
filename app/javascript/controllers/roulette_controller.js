@@ -1,18 +1,17 @@
 import { Controller } from "stimulus";
 
 export default class extends Controller {
-  static values = { favorites: Array }; // Define a value to hold the favorites books
+  static values = { favorites: Array };
   static targets = [ "list" ]
   connect() {
     console.log(this.favoritesValue);
-    this.favoritesValue = this.favoritesValue; // Access the favorites array value
+    this.favoritesValue = this.favoritesValue;
     this.rand = (min, max) => Math.floor(Math.random() * (max - min)) + min;
-    this.play(); // Call the play function when the controller connects
+    this.play();
 
   }
 
   play() {
-    // const rand = (min, max) => Math.floor(Math.random() * (max - min)) + min;
     const width = 80;
     const wrap = document.querySelector('.roulette-container .wrap');
 
@@ -45,7 +44,7 @@ export default class extends Controller {
 
 
 
-    this.#runPlay(); // Start the game
+    this.#runPlay();
   }
 
   disconnect() {
@@ -53,7 +52,7 @@ export default class extends Controller {
   }
 
   #runPlay = () => {
-    let index = this.rand(0, this.favoritesValue.length); // Randomly select a book index
+    let index = this.rand(0, this.favoritesValue.length);
 
     this.spin_promise(index).then(() => {
       console.log("[Ended]");
