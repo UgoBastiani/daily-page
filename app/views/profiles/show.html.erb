@@ -40,10 +40,10 @@
             <!-- Onglet Account -->
             <div class="tab-pane fade show active" id="account" role="tabpanel">
               <%# <h2 class="text-center">Account</h2> %>
-              <div class="counter bg-light p-3 rounded">
+              <div class="counter" style="border-radius: 15px; border: 1px solid #343a40; background-color: #f8f9fa; padding: 15px;">
                 <div class="profile-details">
                   <div class="profile-item">
-                    <i class="fa-solid fa-book-open-reader"></i> :
+                    <i class="fa-regular fa-user"></i> :
                     <%= current_user&.first_name %> <%= current_user&.last_name %>
                   </div>
                   <div class="profile-item">
@@ -60,30 +60,37 @@
 
             <!-- Onglet Stats -->
             <div class="tab-pane fade" id="stats" role="tabpanel">
-              <%# <h2 class="text-center">Stats</h2> %>
               <div class="counters mt-3">
-                <div class="row text-center">
-                  <div class="col-md-4">
-                    <div class="counter bg-light p-3 rounded">
-                      <h4>Favorites</h4>
-                      <span id="favorites" class="display-4"><%= current_user.favorites.count %></span>
+                <div class="row text-center justify-content-center">
+                  <!-- Premier élément : Favorites -->
+                  <div class="col-4 d-flex align-items-stretch">
+                    <div class="d-flex flex-column justify-content-between p-3 mb-3 w-100" style="border-radius: 15px; border: 1px solid #343a40; background-color: #f8f9fa;">
+                      <p class="small-text">Favorites</p>
+                      <span id="favorites" class="display-4 smaller-result"><%= current_user.favorites.count %></span>
                     </div>
                   </div>
-                  <div class="col-md-4">
-                    <div class="counter bg-light p-3 rounded">
-                      <h4>Books Read</h4>
-                      <span id="books-read" class="display-4"><%= @books_read.count %></span>
+                  <!-- Deuxième élément : Books Read -->
+                  <div class="col-4 d-flex align-items-stretch">
+                    <div class="d-flex flex-column justify-content-between p-3 mb-3 w-100" style="border-radius: 15px; border: 1px solid #343a40; background-color: #f8f9fa;">
+                      <p class="small-text">Books Read</p>
+                      <span id="books-read" class="display-4 smaller-result"><%= @books_read.count %></span>
                     </div>
                   </div>
-                  <div class="col-md-4">
-                    <div class="counter bg-light p-3 rounded">
-                      <h4>Pages Read</h4>
-                      <span id="pages-read" class="display-4"><%= @pages_read %></span>
+                  <!-- Troisième élément : Pages Read -->
+                  <div class="col-4 d-flex align-items-stretch">
+                    <div class="d-flex flex-column justify-content-between p-3 mb-3 w-100" style="border-radius: 15px; border: 1px solid #343a40; background-color: #f8f9fa;">
+                      <p class="small-text">Pages Read</p>
+                      <span id="pages-read" class="display-4 smaller-result"><%= @pages_read %></span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+
+
+
+
+
 
             <!-- Onglet History -->
             <div class="tab-pane fade" id="history" role="tabpanel">
@@ -120,8 +127,6 @@
               <% end %>
             </div>
           </div>
-
-
 
           </div>
 
