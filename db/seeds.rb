@@ -41,6 +41,27 @@ user4 = User.create(
   # profile_picture: "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 )
 
+user5 = User.create(
+  first_name: "Mikasa",
+  last_name: "Ackerman",
+  email: "mikasa@exemple.com",
+  password: "password123"
+)
+
+user6 = User.create(
+  first_name: "Eren",
+  last_name: "Jaeger",
+  email: "eren@exemple.com",
+  password: "password123"
+)
+
+User.create(
+  first_name: "Armin",
+  last_name: "Arlert",
+  email: "armin@exemple.com",
+  password: "password123"
+)
+
 # category1 = Category.create(
 #   name: "Policier",
 #   mood: "Plot"
@@ -1166,6 +1187,43 @@ Favorite.create(user: user4, book: Book.find(Book.pluck(:id).sample), read: true
 Favorite.create(user: user1, book: Book.find(Book.pluck(:id).sample), read: true)
 Favorite.create(user: user1, book: Book.find(Book.pluck(:id).sample), read: false)
 Favorite.create(user: user2, book: Book.find(Book.pluck(:id).sample), read: false)
+Favorite.create(user: user5, book: Book.find_by(title: "Educated"), read: true)
+Favorite.create(user: user5, book: Book.find_by(title: "The Three Musketeers"), read: true)
+Favorite.create(user: user5, book: Book.find_by(title: "A Confederacy of Dunces"), read: true)
+Favorite.create(user: user5, book: Book.find_by(title: "The Lies of Locke Lamora"), read: false)
+Favorite.create(user: user5, book: Book.find_by(title: "The Book Thief"), read: false)
+Favorite.create(user: user5, book: Book.find_by(title: "In the Woods"), read: false)
+Favorite.create(user: user5, book: Book.find_by(title: "Hyperion"), read: false)
+Favorite.create(user: user5, book: Book.find_by(title: "The Woman in the Window"), read: false)
+Favorite.create(user: user5, book: Book.find_by(title: "Good Omens"), read: true)
+Favorite.create(user: user5, book: Book.find_by(title: "The Notebook"), read: false)
+Favorite.create(user: user5, book: Book.find_by(title: "Frankenstein"), read: false)
+
+Favorite.create(user: user6, book: Book.find_by(title: "Educated"), read: true)
+Favorite.create(user: user6, book: Book.find_by(title: "The Three Musketeers"), read: true)
+Favorite.create(user: user6, book: Book.find_by(title: "A Confederacy of Dunces"), read: true)
+Favorite.create(user: user6, book: Book.find_by(title: "The Lies of Locke Lamora"), read: false)
+Favorite.create(user: user6, book: Book.find_by(title: "The Book Thief"), read: false)
+Favorite.create(user: user6, book: Book.find_by(title: "In the Woods"), read: false)
+Favorite.create(user: user6, book: Book.find_by(title: "Hyperion"), read: false)
+Favorite.create(user: user6, book: Book.find_by(title: "The Woman in the Window"), read: false)
+Favorite.create(user: user6, book: Book.find_by(title: "Good Omens"), read: true)
+Favorite.create(user: user6, book: Book.find_by(title: "The Notebook"), read: false)
+Favorite.create(user: user6, book: Book.find_by(title: "Frankenstein"), read: false)
+
+Favorite.create(user: user7, book: Book.find_by(title: "Educated"), read: true)
+Favorite.create(user: user7, book: Book.find_by(title: "The Three Musketeers"), read: true)
+Favorite.create(user: user7, book: Book.find_by(title: "A Confederacy of Dunces"), read: true)
+Favorite.create(user: user7, book: Book.find_by(title: "The Lies of Locke Lamora"), read: false)
+Favorite.create(user: user7, book: Book.find_by(title: "The Book Thief"), read: false)
+Favorite.create(user: user7, book: Book.find_by(title: "In the Woods"), read: false)
+Favorite.create(user: user7, book: Book.find_by(title: "Hyperion"), read: false)
+Favorite.create(user: user7, book: Book.find_by(title: "The Woman in the Window"), read: false)
+Favorite.create(user: user7, book: Book.find_by(title: "Good Omens"), read: true)
+Favorite.create(user: user7, book: Book.find_by(title: "The Notebook"), read: false)
+Favorite.create(user: user7, book: Book.find_by(title: "Frankenstein"), read: false)
+
+
 
 p Favorite.all
 
@@ -1176,6 +1234,39 @@ Suggestion.create(user: user4, book: Book.find(Book.pluck(:id).sample), created_
 Suggestion.create(user: user1, book: Book.find(Book.pluck(:id).sample), created_at: "2024-08-20 00:00:00")
 Suggestion.create(user: user1, book: Book.find(Book.pluck(:id).sample), created_at: "2024-08-20 00:00:00")
 Suggestion.create(user: user2, book: Book.find(Book.pluck(:id).sample), created_at: "2024-08-20 00:00:00")
+Suggestion.create(user: user5, book: Book.find_by(title: "Hyperion"), created_at: "2024-08-29 00:00:00")
+Suggestion.create(user: user5, book: Book.find_by(title: "Frankenstein"), created_at: "2024-08-28 00:00:00")
+Suggestion.create(user: user5, book: Book.find_by(title: "The Notebook"), created_at: "2024-08-27 00:00:00")
+Suggestion.create(user: user5, book: Book.find_by(title: "The Lies of Locke Lamora"), created_at: "2024-08-26 00:00:00")
+Suggestion.create(user: user5, book: Book.find_by(title: "The Book Thief"), created_at: "2024-08-25 00:00:00")
+Suggestion.create(user: user5, book: Book.find_by(title: "The Woman in the Window"), created_at: "2024-08-24 00:00:00")
+Suggestion.create(user: user5, book: Book.find_by(title: "Good Omens"), created_at: "2024-08-20 00:00:00")
+Suggestion.create(user: user5, book: Book.find_by(title: "A Confederacy of Dunces"), created_at: "2024-08-18 00:00:00")
+Suggestion.create(user: user5, book: Book.find_by(title: "The Three Musketeers"), created_at: "2024-08-17 00:00:00")
+Suggestion.create(user: user5, book: Book.find_by(title: "Educated"), created_at: "2024-08-15 00:00:00")
+
+Suggestion.create(user: user6, book: Book.find_by(title: "Hyperion"), created_at: "2024-08-29 00:00:00")
+Suggestion.create(user: user6, book: Book.find_by(title: "Frankenstein"), created_at: "2024-08-28 00:00:00")
+Suggestion.create(user: user6, book: Book.find_by(title: "The Notebook"), created_at: "2024-08-27 00:00:00")
+Suggestion.create(user: user6, book: Book.find_by(title: "The Lies of Locke Lamora"), created_at: "2024-08-26 00:00:00")
+Suggestion.create(user: user6, book: Book.find_by(title: "The Book Thief"), created_at: "2024-08-25 00:00:00")
+Suggestion.create(user: user6, book: Book.find_by(title: "The Woman in the Window"), created_at: "2024-08-24 00:00:00")
+Suggestion.create(user: user6, book: Book.find_by(title: "Good Omens"), created_at: "2024-08-20 00:00:00")
+Suggestion.create(user: user6, book: Book.find_by(title: "A Confederacy of Dunces"), created_at: "2024-08-18 00:00:00")
+Suggestion.create(user: user6, book: Book.find_by(title: "The Three Musketeers"), created_at: "2024-08-17 00:00:00")
+Suggestion.create(user: user6, book: Book.find_by(title: "Educated"), created_at: "2024-08-15 00:00:00")
+
+Suggestion.create(user: user7, book: Book.find_by(title: "Hyperion"), created_at: "2024-08-29 00:00:00")
+Suggestion.create(user: user7, book: Book.find_by(title: "Frankenstein"), created_at: "2024-08-28 00:00:00")
+Suggestion.create(user: user7, book: Book.find_by(title: "The Notebook"), created_at: "2024-08-27 00:00:00")
+Suggestion.create(user: user7, book: Book.find_by(title: "The Lies of Locke Lamora"), created_at: "2024-08-26 00:00:00")
+Suggestion.create(user: user7, book: Book.find_by(title: "The Book Thief"), created_at: "2024-08-25 00:00:00")
+Suggestion.create(user: user7, book: Book.find_by(title: "The Woman in the Window"), created_at: "2024-08-24 00:00:00")
+Suggestion.create(user: user7, book: Book.find_by(title: "Good Omens"), created_at: "2024-08-20 00:00:00")
+Suggestion.create(user: user7, book: Book.find_by(title: "A Confederacy of Dunces"), created_at: "2024-08-18 00:00:00")
+Suggestion.create(user: user7, book: Book.find_by(title: "The Three Musketeers"), created_at: "2024-08-17 00:00:00")
+Suggestion.create(user: user7, book: Book.find_by(title: "Educated"), created_at: "2024-08-15 00:00:00")
+
 
 p Suggestion.all
 
