@@ -1241,9 +1241,9 @@ Suggestion.create(user: user5, book: Book.find_by(title: "The Lies of Locke Lamo
 Suggestion.create(user: user5, book: Book.find_by(title: "The Book Thief"), created_at: "2024-08-25 00:00:00")
 Suggestion.create(user: user5, book: Book.find_by(title: "The Woman in the Window"), created_at: "2024-08-24 00:00:00")
 Suggestion.create(user: user5, book: Book.find_by(title: "Good Omens"), created_at: "2024-08-20 00:00:00")
-Suggestion.create(user: user5, book: Book.find_by(title: "A Confederacy of Dunces"), created_at: "2024-08-18 00:00:00")
-Suggestion.create(user: user5, book: Book.find_by(title: "The Three Musketeers"), created_at: "2024-08-17 00:00:00")
-Suggestion.create(user: user5, book: Book.find_by(title: "Educated"), created_at: "2024-08-15 00:00:00")
+Suggestion.create(user: user5, book: Book.find_by(title: "A Confederacy of Dunces"), created_at: "2024-07-18 00:00:00")
+Suggestion.create(user: user5, book: Book.find_by(title: "The Three Musketeers"), created_at: "2024-07-17 00:00:00")
+Suggestion.create(user: user5, book: Book.find_by(title: "Educated"), created_at: "2024-06-15 00:00:00")
 
 Suggestion.create(user: user6, book: Book.find_by(title: "Hyperion"), created_at: "2024-08-29 00:00:00")
 Suggestion.create(user: user6, book: Book.find_by(title: "Frankenstein"), created_at: "2024-08-28 00:00:00")
@@ -1252,9 +1252,9 @@ Suggestion.create(user: user6, book: Book.find_by(title: "The Lies of Locke Lamo
 Suggestion.create(user: user6, book: Book.find_by(title: "The Book Thief"), created_at: "2024-08-25 00:00:00")
 Suggestion.create(user: user6, book: Book.find_by(title: "The Woman in the Window"), created_at: "2024-08-24 00:00:00")
 Suggestion.create(user: user6, book: Book.find_by(title: "Good Omens"), created_at: "2024-08-20 00:00:00")
-Suggestion.create(user: user6, book: Book.find_by(title: "A Confederacy of Dunces"), created_at: "2024-08-18 00:00:00")
-Suggestion.create(user: user6, book: Book.find_by(title: "The Three Musketeers"), created_at: "2024-08-17 00:00:00")
-Suggestion.create(user: user6, book: Book.find_by(title: "Educated"), created_at: "2024-08-15 00:00:00")
+Suggestion.create(user: user6, book: Book.find_by(title: "A Confederacy of Dunces"), created_at: "2024-07-18 00:00:00")
+Suggestion.create(user: user6, book: Book.find_by(title: "The Three Musketeers"), created_at: "2024-07-17 00:00:00")
+Suggestion.create(user: user6, book: Book.find_by(title: "Educated"), created_at: "2024-06-15 00:00:00")
 
 Suggestion.create(user: user7, book: Book.find_by(title: "Hyperion"), created_at: "2024-08-29 00:00:00")
 Suggestion.create(user: user7, book: Book.find_by(title: "Frankenstein"), created_at: "2024-08-28 00:00:00")
@@ -1263,9 +1263,9 @@ Suggestion.create(user: user7, book: Book.find_by(title: "The Lies of Locke Lamo
 Suggestion.create(user: user7, book: Book.find_by(title: "The Book Thief"), created_at: "2024-08-25 00:00:00")
 Suggestion.create(user: user7, book: Book.find_by(title: "The Woman in the Window"), created_at: "2024-08-24 00:00:00")
 Suggestion.create(user: user7, book: Book.find_by(title: "Good Omens"), created_at: "2024-08-20 00:00:00")
-Suggestion.create(user: user7, book: Book.find_by(title: "A Confederacy of Dunces"), created_at: "2024-08-18 00:00:00")
-Suggestion.create(user: user7, book: Book.find_by(title: "The Three Musketeers"), created_at: "2024-08-17 00:00:00")
-Suggestion.create(user: user7, book: Book.find_by(title: "Educated"), created_at: "2024-08-15 00:00:00")
+Suggestion.create(user: user7, book: Book.find_by(title: "A Confederacy of Dunces"), created_at: "2024-07-18 00:00:00")
+Suggestion.create(user: user7, book: Book.find_by(title: "The Three Musketeers"), created_at: "2024-07-17 00:00:00")
+Suggestion.create(user: user7, book: Book.find_by(title: "Educated"), created_at: "2024-06-15 00:00:00")
 
 
 p Suggestion.all
