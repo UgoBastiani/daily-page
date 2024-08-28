@@ -5,10 +5,12 @@
   <div class="row g-0">
 
     <div class="col-4 d-flex justify-content-center align-items-center">
-      <%= link_to book_path(favorite.book) do %>
-        <img class="img-fluid" src="<%= favorite.book.thumbnail %>" alt="Book Picture" id="img-book" style="height: 170px; display: flex; justify-content: center; align-items: center; overflow: hidden; border-radius: 10px;">
-      <% end %>
-    </div>
+  <%= link_to book_path(favorite.book, return_to_favorites: true) do %>
+    <img class="img-fluid" src="<%= favorite.book.thumbnail %>" alt="Book Picture" id="img-book" style="height: 170px; display: flex; justify-content: center; align-items: center; overflow: hidden; border-radius: 10px;">
+  <% end %>
+</div>
+
+
 
     <div class="col-8">
       <div class="card-body p-2">
