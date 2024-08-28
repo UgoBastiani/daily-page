@@ -1,11 +1,17 @@
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
-<div class="card mb-3" style="max-width: 600px;">
+<div class="card m-3" style="max-width: 600px; border-radius: 20px">
   <div class="row g-0">
+
     <div class="col-4 d-flex justify-content-center align-items-center">
-      <img class="img-fluid rounded-start" src="<%= favorite.book.thumbnail %>" alt="Book Picture" id="img-book" style="margin-right: 10px;">
-    </div>
+  <%= link_to book_path(favorite.book, return_to_favorites: true) do %>
+    <img class="img-fluid" src="<%= favorite.book.thumbnail %>" alt="Book Picture" id="img-book" style="height: 170px; display: flex; justify-content: center; align-items: center; overflow: hidden; border-radius: 10px;">
+  <% end %>
+</div>
+
+
+
     <div class="col-8">
       <div class="card-body p-2">
         <div class="position-relative">
