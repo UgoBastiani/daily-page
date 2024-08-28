@@ -8,7 +8,8 @@
 
 <% if params[:return_to_favorites] %>
   <div class="m-3">
-    <%= link_to favorites_path, data: { turbo: false }, class: 'btn btn-secondary', style: 'background-color: #EFEF24; color: black' do %>
+  <%= raise %>
+    <%= link_to favorites_path(anchor: 'justified-tabpanel-0'), data: { turbo: false }, class: 'btn btn-secondary', style: 'background-color: #EFEF24; color: black' do %>
       <i class="fa-solid fa-arrow-left"></i>
     <% end %>
   </div>
