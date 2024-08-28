@@ -14,6 +14,13 @@
   </div>
 <% end %>
 
+<% if params[:return_to_next_book] %>
+  <div class="m-3">
+    <%= link_to next_book_path, data: { turbo: false }, class: 'btn btn-secondary', style: 'background-color: #EFEF24; color: black' do %>
+      <i class="fa-solid fa-arrow-left"></i>
+    <% end %>
+  </div>
+<% end %>
 
 
 
