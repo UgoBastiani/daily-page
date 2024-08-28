@@ -1,0 +1,5 @@
+meta_product_name: "Daily Page"
+meta_title: "Daily Page - Discover Your Next Read"
+meta_description: "Daily Page helps readers and yet-to-be-readers discover their next books. Tell us what you'd like to read, and you'll help you find THE book."
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account" # required for Twitter Cards

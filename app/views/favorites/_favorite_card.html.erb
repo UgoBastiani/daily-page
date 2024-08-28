@@ -3,9 +3,15 @@
 
 <div class="card m-3" style="max-width: 600px; border-radius: 20px">
   <div class="row g-0">
+
     <div class="col-4 d-flex justify-content-center align-items-center">
-      <img class="img-fluid" src="<%= favorite.book.thumbnail %>" alt="Book Picture" id="img-book" style="height: 90%; display: flex; justify-content: center; align-items: center; overflow: hidden; border-radius: 10px;">
-    </div>
+  <%= link_to book_path(favorite.book, return_to_favorites: true) do %>
+    <img class="img-fluid" src="<%= favorite.book.thumbnail %>" alt="Book Picture" id="img-book" style="height: 170px; display: flex; justify-content: center; align-items: center; overflow: hidden; border-radius: 10px;">
+  <% end %>
+</div>
+
+
+
     <div class="col-8">
       <div class="card-body p-2">
         <div class="position-relative">
@@ -13,10 +19,10 @@
             <i class="fas fa-ellipsis-v"></i>
           </button>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton" style="width: 70vw; background-color: #f5f5f5">
-            <li class="m-3">
+            <li class="m-2">
             <div class="d-flex">
               <%= render "shared/popupshare", id: favorite.id %>
-              <p class="mt-2 ps-2">Share this book</p>
+              <p class="mt-2 ps-1">Share this book</p>
               </div>
             </li>
             <li>
@@ -34,7 +40,7 @@
         <ul class="list-unstyled mb-0">
           <li><p class="mb-1 text-muted"><i class="favorites-text">Title</i></p> <h3 class="mb-1"><strong><%= favorite.book.title %></strong></h3></li>
           <li><p class="mb-1 text-muted"><i class="favorites-text">Author</i></p> <h3 class="mb-1"><strong><%= favorite.book.author %></strong></h3></li>
-          <li><p class="mb-1 text-muted"><i class="favorites-text">Year</i></p> <h3 class="mb-1"><strong><%= favorite.book.publishing_date %></strong></h3></li>
+          <li><p class="mb-1 text-muted"><i class="favorites-text">Year</i></p> <h3 class="mb-1"><strong><%= favorite.book.publishing_date.year %></strong></h3></li>
         </ul>
       </div>
     </div>
