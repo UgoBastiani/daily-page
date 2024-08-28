@@ -55,7 +55,7 @@ user6 = User.create(
   password: "password123"
 )
 
-User.create(
+user7 = User.create(
   first_name: "Armin",
   last_name: "Arlert",
   email: "armin@exemple.com",
