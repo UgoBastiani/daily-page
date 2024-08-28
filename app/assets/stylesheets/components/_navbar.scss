@@ -18,7 +18,7 @@
 }
 
 .logo-caption {
-  font-size: 10px;
+  font-size: 9px;
 }
 .logo-container{
   color: darkgray;
@@ -36,6 +36,11 @@
 .container-fluid {
   background-color: black;
   border-radius: 20px;
-  padding: 5px
-
+  padding: 7px;
+}
+.navbar-lewagon .navbar-brand .fa-regular{
+  font-size: 25px;
+}
+.navbar-lewagon .navbar-brand .fa-solid{
+  font-size: 25px;
 }
