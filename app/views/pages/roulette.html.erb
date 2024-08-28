@@ -1,31 +1,38 @@
+<div class="d-flex flex-column justify-content-center align-items-center" data-controller="roulette" style="padding-top: 120px;">
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
 
+      <% 10.times do %>
+        <% @favorite_books.shuffle.each do |book| %>
+          <%= link_to "", book_path(book), class: "swiper-slide", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('#{book.thumbnail}'); background-size: cover;" %>
+        <% end %>
+      <% end %>
 
-<div data-controller="roulette">
-  <div class="preview__roulette roulette" style="padding: 10px;">
-    <ul class="roulette__list">
-      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--yellow">0</div></li>
-      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--teal">1</div></li>
-      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--pink">2</div></li>
-      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--yellow">3</div></li>
-      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--yellow">4</div></li>
-      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--pink">5</div></li>
-      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--purple">6</div></li>
-      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--teal">7</div></li>
-      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--green">8</div></li>
-      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--purple">9</div></li>
-      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--teal">10</div></li>
-      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--green">11</div></li>
-      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--purple">12</div></li>
-      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--pink">13</div></li>
-      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--teal">14</div></li>
-      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--purple">15</div></li>
-      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--purple">16</div></li>
-      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--pink">17</div></li>
-      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--green">18</div></li>
-      <li class="roulette__prize" style="margin-right: 10px; min-width: 76px; min-height: 76px;"><div class="prize-item prize-item--pink">19</div></li>
-    </ul>
+    </div>
   </div>
 
-  <button data-action="click->roulette#start">Start roulette</button>
-  <button data-action="click->roulette#stop">Stop roulette</button>
+  <div class="mt-4">
+    <button data-action="click->roulette#start" class="btn btn-info d-flex align-items-center justify-content-center rounded-pill" style="height: 60px; padding: 0 1rem; width: 100%; max-width: 200px;">
+      <i class="fa-solid fa-shuffle" style="font-size: 1.5rem;"></i>
+      <span style="margin-left: 0.5rem;">Start</span>
+    </button>
+  </div>
+
 </div>
+
+<style>
+    .swiper {
+      width: 240px;
+      height: 320px;
+    }
+
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 18px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #fff;
+    }
+</style>

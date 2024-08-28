@@ -1183,7 +1183,7 @@ end
 Favorite.create(user: user2, book: Book.find(Book.pluck(:id).sample), read: false)
 Favorite.create(user: user1, book: Book.find(Book.pluck(:id).sample), read: false)
 Favorite.create(user: user3, book: Book.find(Book.pluck(:id).sample), read: true)
-Favorite.create(user: user4, book: Book.find(Book.pluck(:id).sample), read: true)
+# Favorite.create(user: user4, book: Book.find(Book.pluck(:id).sample), read: true)
 Favorite.create(user: user1, book: Book.find(Book.pluck(:id).sample), read: true)
 Favorite.create(user: user1, book: Book.find(Book.pluck(:id).sample), read: false)
 Favorite.create(user: user2, book: Book.find(Book.pluck(:id).sample), read: false)
@@ -1230,7 +1230,7 @@ p Favorite.all
 Suggestion.create(user: user1, book: Book.find(Book.pluck(:id).sample), created_at: "2024-08-20 00:00:00")
 Suggestion.create(user: user2, book: Book.find(Book.pluck(:id).sample), created_at: "2024-08-20 00:00:00")
 Suggestion.create(user: user3, book: Book.find(Book.pluck(:id).sample), created_at: "2024-08-20 00:00:00")
-Suggestion.create(user: user4, book: Book.find(Book.pluck(:id).sample), created_at: "2024-08-20 00:00:00")
+# Suggestion.create(user: user4, book: Book.find(Book.pluck(:id).sample), created_at: "2024-08-20 00:00:00")
 Suggestion.create(user: user1, book: Book.find(Book.pluck(:id).sample), created_at: "2024-08-20 00:00:00")
 Suggestion.create(user: user1, book: Book.find(Book.pluck(:id).sample), created_at: "2024-08-20 00:00:00")
 Suggestion.create(user: user2, book: Book.find(Book.pluck(:id).sample), created_at: "2024-08-20 00:00:00")
@@ -1269,5 +1269,23 @@ Suggestion.create(user: user7, book: Book.find_by(title: "Educated"), created_at
 
 
 p Suggestion.all
+
+Favorite.create(user: user4, book: Book.find(Book.pluck(:id).sample), read: false)
+Favorite.create(user: user4, book: Book.find(Book.pluck(:id).sample), read: false)
+Favorite.create(user: user4, book: Book.find(Book.pluck(:id).sample), read: false)
+Favorite.create(user: user4, book: Book.find(Book.pluck(:id).sample), read: false)
+Favorite.create(user: user4, book: Book.find(Book.pluck(:id).sample), read: false)
+Favorite.create(user: user4, book: Book.find(Book.pluck(:id).sample), read: false)
+Favorite.create(user: user4, book: Book.find(Book.pluck(:id).sample), read: false)
+Favorite.create(user: user4, book: Book.find(Book.pluck(:id).sample), read: false)
+Favorite.create(user: user4, book: Book.find(Book.pluck(:id).sample), read: false)
+Favorite.create(user: user4, book: Book.find(Book.pluck(:id).sample), read: false)
+Favorite.create(user: user4, book: Book.find(Book.pluck(:id).sample), read: false)
+
+Favorite.create(user: user4, book: Book.find(Book.pluck(:id).sample), read: true)
+Favorite.create(user: user4, book: Book.find(Book.pluck(:id).sample), read: true)
+Favorite.create(user: user4, book: Book.find(Book.pluck(:id).sample), read: true)
+Favorite.create(user: user4, book: Book.find(Book.pluck(:id).sample), read: true)
+Favorite.create(user: user4, book: Book.find(Book.pluck(:id).sample), read: true)
 
 p "db created"
