@@ -4,7 +4,9 @@
 
       <% 10.times do %>
         <% @favorite_books.shuffle.each do |book| %>
-          <%= link_to "", book_path(book), class: "swiper-slide", style: "background-image: url('#{book.thumbnail}'); background-size: cover;" %>
+
+          <%= link_to "", book_path(book, return_to_next_book: true), class: "swiper-slide", style: "background-image: url('#{book.thumbnail}'); background-size: cover;" %>
+
         <% end %>
       <% end %>
 
