@@ -7,9 +7,9 @@
         <div class="card-body">
           <h1 class="card-title text-center">Profile</h1>
 
-          <div class="avatar mt-2 mb-2 text-center">
+          <div class="mt-2 mb-2 text-center d-flex justify-content-center">
             <% if @current_user.photo.attached? %>
-              <%= cl_image_tag @current_user.photo.key, height: 350, width: 350, crop: :fill, class: "rounded-circle" %>
+                <%= cl_image_tag @current_user.photo.key, height: 200, width: 200, crop: :fill, class: "d-flex justify-content-center rounded-circle" %>
             <% else %>
               (Profile picture)
             <% end %>
