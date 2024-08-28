@@ -5,8 +5,10 @@
     <div class="col-md-8">
       <div class="card">
         <div class="card-body">
-          <h1 class="card-title text-center">Profile</h1>
-
+          <%# <h1 class="card-title text-center" ></h1> %>
+      <h1 class="mt-4 mb-4" style="text-align: center; width: 100%;">
+        <span style="border-bottom: 10px solid #EFEF24; padding-bottom: 10px;">Profile</span>
+      </h1>
           <div class="avatar mt-2 mb-2 text-center">
             <% if @current_user.photo.attached? %>
               <%= cl_image_tag @current_user.photo.key, height: 350, width: 350, crop: :fill, class: "rounded-circle" %>
@@ -20,17 +22,17 @@
           <!-- Onglets centrés -->
           <ul class="nav nav-tabs border-0" role="tablist" id="profile-tabs">
             <li class="nav-item">
-              <a class="nav-link text-black border-0 active" data-bs-toggle="tab" href="#account" role="tab">
+              <a class="nav-link active text-black" data-bs-toggle="tab" href="#account" role="tab">
                 Account
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-black border-0" data-bs-toggle="tab" href="#stats" role="tab">
+              <a class="nav-link text-black" data-bs-toggle="tab" href="#stats" role="tab">
                 Stats
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-black border-0" data-bs-toggle="tab" href="#history" role="tab">
+              <a class="nav-link text-black " data-bs-toggle="tab" href="#history" role="tab">
                 History
               </a>
             </li>
