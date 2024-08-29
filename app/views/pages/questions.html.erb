@@ -4,7 +4,7 @@
   <h5 class="d-flex justify-content-center m-4 position-relative text-center" style="padding-bottom: 30px;">
           What emotions do you wish to experience while reading?
       </h5>
-    <div class="d-flex flex-wrap justify-content-evenly" id="q1">
+    <div class="d-flex flex-wrap justify-content-evenly;" id="q1">
 
      <div class="card-answer">
         <%= button_tag "Intrigue", type: "button", name: "mood", value: "Suspenseful",
@@ -120,7 +120,7 @@
       </div>
 
       <div class="card-answer">
-        <%= button_tag "Any Length Adventure", type: "button", name: "pages", value: "Anyway",
+        <%= button_tag "Surprise Me ", type: "button", name: "pages", value: "Anyway",
           class: "button-answer",
           style: "background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.pexels.com/photos/356079/pexels-photo-356079.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); background-size: cover; background-position: center; color: white; text-shadow: 1px 1px 2px black;",
           data: { action: "click->questionnaire-home#selectPages" } %>

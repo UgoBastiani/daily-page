@@ -1,6 +1,6 @@
 <% if params[:return_to_history] %>
   <div class="m-3">
-    <%= link_to profile_path(anchor: 'history'), data: { turbo: false }, class: 'btn btn-secondary', style: 'background-color: #EFEF24; color: black' do %>
+    <%= link_to profile_path(anchor: 'history'), data: { turbo: false }, class: 'btn btn-secondary', style: 'background-color: #F5C518; color: black' do %>
       <i class="fa-solid fa-arrow-left"></i>
     <% end %>
   </div>
@@ -8,7 +8,7 @@
 
 <% if params[:return_to_favorites] %>
   <div class="m-3">
-    <%= link_to favorites_path(anchor: 'justified-tabpanel-0'), data: { turbo: false }, class: 'btn btn-secondary', style: 'background-color: #EFEF24; color: black' do %>
+    <%= link_to favorites_path(anchor: 'justified-tabpanel-0'), data: { turbo: false }, class: 'btn btn-secondary', style: 'background-color: #F5C518; color: black' do %>
       <i class="fa-solid fa-arrow-left"></i>
     <% end %>
   </div>
@@ -16,7 +16,7 @@
 
 <% if params[:return_to_next_book] %>
   <div class="m-3">
-    <%= link_to next_book_path, data: { turbo: false }, class: 'btn btn-secondary', style: 'background-color: #EFEF24; color: black' do %>
+    <%= link_to next_book_path, data: { turbo: false }, class: 'btn btn-secondary', style: 'background-color: #F5C518; color: black' do %>
       <i class="fa-solid fa-arrow-left"></i>
     <% end %>
   </div>
@@ -52,13 +52,13 @@
             </h2>
             <div id="collapseAbout" class="accordion-collapse collapse" aria-labelledby="headingAbout">
               <div class="accordion-body p-3" style="border-radius: 10px; background-color: #ffffff;">
-                <div><strong>Author:</strong> <%= @book.author %></div>
+                <div><i class="fa-solid fa-pen-nib"></i> : <%= @book.author %></div>
                 <hr style="border: 1px solid black;">
-                <div><strong>Title:</strong> <%= @book.title %></div>
+                <div><i class="fa-solid fa-book"></i> : <%= @book.title %></div>
                 <hr style="border: 1px solid black;">
-                <div><strong>Number of Pages:</strong> <%= @book.number_of_pages %></div>
+                <div><i class="fa-solid fa-copy"></i> : <%= @book.number_of_pages %> pages</div>
                 <hr style="border: 1px solid black;">
-                <div><strong>Release Date:</strong> <%= @book.publishing_date %></div>
+                <div><i class="fa-solid fa-calendar-days"></i> : <%= @book.publishing_date %></div>
               </div>
             </div>
           </div>
