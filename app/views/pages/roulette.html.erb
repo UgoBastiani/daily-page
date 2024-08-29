@@ -1,36 +1,37 @@
-<div class="d-flex justify-content-center p-3 m-2">
-      <h1 class="mt-4 mb-4" style="text-align: center; width: 100%;">
-        <span style="border-bottom: 10px solid #EFEF24; padding-bottom: 10px;">Shuffle</span>
-      </h1>
-    </div>
-<div class="d-flex flex-column justify-content-center align-items-center" data-controller="roulette" style="padding-top: 120px;">
-  <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
+  <div class="d-flex justify-content-center p-3 m-2">
+        <h1 class="mt-2 mb-4" style="text-align: center; width: 100%;">
+          <span style="border-bottom: 10px solid #EFEF24; padding-bottom: 10px;"><i class="fa-solid fa-ghost"></i> Pick-A-Book ! </span>
+        </h1>
+      </div>
+  <div class="d-flex flex-column justify-content-center align-items-center" data-controller="roulette" style="padding-top: 10px;">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
 
-      <% 10.times do %>
-        <% @favorite_books.shuffle.each do |book| %>
+        <% 10.times do %>
+          <% @favorite_books.shuffle.each do |book| %>
 
-          <%= link_to "", book_path(book, return_to_next_book: true), class: "swiper-slide", style: "background-image: url('#{book.thumbnail}'); background-size: cover;" %>
+            <%= link_to "", book_path(book, return_to_next_book: true), class: "swiper-slide", style: "background-image: url('#{book.thumbnail}'); background-size: cover;" %>
 
+          <% end %>
         <% end %>
-      <% end %>
 
+      </div>
     </div>
+
+    <div class="mt-4">
+      <button data-action="click->roulette#start" class="btn btn-info d-flex align-items-center justify-content-center rounded-pill" style="height: 60px; padding: 0 1rem; width: 100%; max-width: 200px;">
+        <i class="fa-solid fa-shuffle" style="font-size: 1.5rem;"></i>
+        <span style="margin-left: 0.5rem;">Start</span>
+      </button>
+    </div>
+
   </div>
 
-  <div class="mt-4">
-    <button data-action="click->roulette#start" class="btn btn-info d-flex align-items-center justify-content-center rounded-pill" style="height: 60px; padding: 0 1rem; width: 100%; max-width: 200px;">
-      <i class="fa-solid fa-shuffle" style="font-size: 1.5rem;"></i>
-      <span style="margin-left: 0.5rem;">Start</span>
-    </button>
-  </div>
-
-</div>
 
 <style>
     .swiper {
       width: 240px;
-      height: 320px;
+      height: 56vh;
     }
 
     .swiper-slide {
