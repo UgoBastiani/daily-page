@@ -9,30 +9,33 @@ button {
   display: none;
 }
 
-#q1 {
+#q1, #q3 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 6px;
+  justify-content: center; /* Centre les éléments horizontalement */
+  justify-items: center; /* Centre chaque élément dans sa colonne */
+  align-items: center; /* Centre chaque élément verticalement */
 }
 
 #q2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 6px;
+  justify-content: center; /* Centre les éléments horizontalement, comme pour #q1 et #q3 */
+  justify-items: center; /* Centre chaque élément dans sa colonne */
+  align-items: center; /* Centre chaque élément verticalement */
 }
 
-#q3 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 6px;
-}
 
 .button-answer {
   height: 25vh;
-  width: 48vw;
+  width: 49vw; /* Réduire légèrement la largeur pour faciliter le centrage */
+  max-width: 400px; /* Ajouter une limite de largeur pour éviter que les boutons ne soient trop larges sur de grands écrans */
   border-radius: 8px;
   border-color: white;
 }
+
 
 .btn-back {
   border-radius: 80px;
